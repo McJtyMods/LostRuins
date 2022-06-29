@@ -3,6 +3,7 @@ package com.mcjty.lostruins.datagen;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.mcjty.lostruins.LostRuins;
+import com.mcjty.lostruins.setup.BlockWithItem;
 import com.mcjty.lostruins.setup.Registration;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.DataProvider;
@@ -35,8 +36,14 @@ public class RuinsLootTables extends LootTableProvider {
     @Override
     public void run(HashCache cache) {
         Map<ResourceLocation, LootTable> tables = new HashMap<>();
-        addSimpleTable(tables, Registration.WALLS1.get());
+        addSimpleTable(tables, Registration.BRICKS1A);
+        addSimpleTable(tables, Registration.BRICKS1B);
+        addSimpleTable(tables, Registration.BRICKS1C);
         writeTables(cache, tables);
+    }
+
+    private void addSimpleTable(Map<ResourceLocation, LootTable> tables, BlockWithItem bwi) {
+        addSimpleTable(tables, bwi.getBlock().get());
     }
 
     private void addSimpleTable(Map<ResourceLocation, LootTable> tables, Block block) {

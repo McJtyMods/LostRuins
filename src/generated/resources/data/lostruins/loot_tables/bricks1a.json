@@ -1,13 +1,13 @@
 {
   "pools": [
     {
-      "name": "walls1",
+      "name": "bricks1a",
       "rolls": 1.0,
       "bonus_rolls": 0.0,
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "lostruins:walls1"
+          "name": "lostruins:bricks1a"
         }
       ]
     }

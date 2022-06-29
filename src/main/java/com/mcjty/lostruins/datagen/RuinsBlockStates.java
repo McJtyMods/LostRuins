@@ -1,6 +1,7 @@
 package com.mcjty.lostruins.datagen;
 
 import com.mcjty.lostruins.LostRuins;
+import com.mcjty.lostruins.setup.BlockWithItem;
 import com.mcjty.lostruins.setup.Registration;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.world.level.block.Block;
@@ -16,7 +17,13 @@ public class RuinsBlockStates extends BlockStateProvider {
 
     @Override
     protected void registerStatesAndModels() {
-        simple(Registration.WALLS1);
+        simple(Registration.BRICKS1A);
+        simple(Registration.BRICKS1B);
+        simple(Registration.BRICKS1C);
+    }
+
+    private void simple(BlockWithItem bwi) {
+        simple(bwi.getBlock());
     }
 
     private void simple(RegistryObject<Block> block) {

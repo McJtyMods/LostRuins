@@ -144,12 +144,12 @@
     "palette": [
       {
         "char": "X",
-        "block": "lostruins:walls1",
+        "block": "minecraft:monster_egg@2",
         "damaged": "minecraft:iron_bars"
       },
       {
         "char": "$",
-        "block": "lostruins:walls1",
+        "block": "minecraft:double_stone_slab",
         "damaged": "minecraft:iron_bars"
       },
       {
@@ -194,7 +194,20 @@
       },
       {
         "char": "b",
-        "block": "lostruins:walls1"
+        "blocks": [
+          {
+            "random": 10,
+            "block": "lostruins:bricks1b"
+          },
+          {
+            "random": 9,
+            "block": "lostruins:bricks1c"
+          },
+          {
+            "random": 2000,
+            "block": "lostruins:bricks1a"
+          }
+        ]
       },
       {
         "char": "B",
@@ -214,7 +227,7 @@
           },
           {
             "random": 2000,
-            "block": "lostruins:walls1"
+            "block": "minecraft:stonebrick"
           }
         ],
         "damaged": "minecraft:iron_bars"

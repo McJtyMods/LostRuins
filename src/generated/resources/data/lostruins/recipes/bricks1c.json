@@ -1,18 +1,19 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "SbbS"
+    "SS",
+    "bS"
   ],
   "key": {
     "S": {
-      "tag": "minecraft:stone_bricks"
+      "item": "minecraft:bricks"
     },
     "b": {
-      "tag": "forge:bones"
+      "item": "minecraft:string"
     }
   },
   "result": {
-    "item": "lostruins:walls1",
+    "item": "lostruins:bricks1c",
     "count": 3
   }
 }

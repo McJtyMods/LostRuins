@@ -1,5 +1,7 @@
 {
-    "block.lostruins.walls1": "Walls 1",
+    "block.lostruins.bricks1a": "Bricks 1 (clean)",
+    "block.lostruins.bricks1b": "Bricks 1 (cracked)",
+    "block.lostruins.bricks1c": "Bricks 1 (dirty)",
 
     "itemGroup.lostruins": "LostRuins"
 }

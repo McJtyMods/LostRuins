@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SS",
+    "Sb"
+  ],
+  "key": {
+    "S": {
+      "item": "minecraft:bricks"
+    },
+    "b": {
+      "item": "minecraft:string"
+    }
+  },
+  "result": {
+    "item": "lostruins:bricks1b",
+    "count": 3
+  }
+}

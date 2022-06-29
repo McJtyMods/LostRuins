@@ -13,7 +13,7 @@ public class ModSetup {
         creativeTab = new CreativeModeTab("lostruins") {
             @Override
             public ItemStack makeIcon() {
-                return new ItemStack(Registration.WALLS1_ITEM.get());
+                return new ItemStack(Registration.BRICKS1A.getBlock().get());
             }
         };
     }
