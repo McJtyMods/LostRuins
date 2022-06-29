@@ -32,6 +32,8 @@ public class LostCitiesCompat
                 ILostCityProfile profile = profileSetup.createProfile("ruined", "ancient");
                 profile.setDescription("Very ruined cities (Lost Ruins)");
                 profile.setWorldStyle("ruined");
+                profile.setCityChancle(0.003);
+                profile.setRuinChance(0.7f, 0.1f, 0.7f);
             });
             return null;
         }

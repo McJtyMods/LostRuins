@@ -36,7 +36,7 @@
       [
         {
           "factor": 1.0,
-          "palette": "bricks_ruined"
+          "palette": "ruined_bricks"
         }
       ],
       [
@@ -73,7 +73,19 @@
       [
         {
           "factor": 1.0,
-          "palette": "bricks_ruined"
+          "palette": "ruined_bricks"
+        },
+        {
+          "factor": 1.0,
+          "palette": "ruined_stone"
+        },
+        {
+          "factor": 1.0,
+          "palette": "ruined_blackstone"
+        },
+        {
+          "factor": 1.0,
+          "palette": "bricks_silver"
         }
       ],
       [
@@ -140,7 +152,7 @@
   },
   {
     "type": "palette",
-    "name": "bricks_ruined",
+    "name": "ruined_bricks",
     "palette": [
       {
         "char": "X",
@@ -156,12 +168,88 @@
         "char": "#",
         "blocks": [
           {
-            "random": 12,
-            "block": "minecraft:sandstone"
+            "random": 32,
+            "block": "lostruins:bricks1b"
+          },
+          {
+            "random": 32,
+            "block": "lostruins:bricks1c"
           },
           {
             "random": 2000,
-            "block": "minecraft:sandstone@2"
+            "block": "lostruins:bricks1a"
+          }
+        ],
+        "damaged": "minecraft:iron_bars"
+      }
+    ]
+  },
+  {
+    "type": "palette",
+    "name": "ruined_stone",
+    "palette": [
+      {
+        "char": "X",
+        "block": "minecraft:monster_egg@2",
+        "damaged": "minecraft:iron_bars"
+      },
+      {
+        "char": "$",
+        "block": "minecraft:double_stone_slab",
+        "damaged": "minecraft:iron_bars"
+      },
+      {
+        "char": "#",
+        "blocks": [
+          {
+            "random": 32,
+            "block": "minecraft:mossy_stone_bricks"
+          },
+          {
+            "random": 32,
+            "block": "minecraft:cracked_stone_bricks"
+          },
+          {
+            "random": 200,
+            "block": "minecraft:stone_bricks"
+          },
+          {
+            "random": 2000,
+            "block": "minecraft:stone"
+          }
+        ],
+        "damaged": "minecraft:iron_bars"
+      }
+    ]
+  },
+  {
+    "type": "palette",
+    "name": "ruined_blackstone",
+    "palette": [
+      {
+        "char": "X",
+        "block": "minecraft:monster_egg@2",
+        "damaged": "minecraft:iron_bars"
+      },
+      {
+        "char": "$",
+        "block": "minecraft:double_stone_slab",
+        "damaged": "minecraft:iron_bars"
+      },
+      {
+        "char": "#",
+        "blocks": [
+          {
+            "random": 32,
+            "block": "minecraft:polished_blackstone_bricks"
+          },
+          {
+            "random": 32,
+            "block": "minecraft:cracked_polished_blackstone_bricks"
+          },
+          {
+            "random": 1000,
+            "block": "minecraft:polished_blackstone"
           }
         ],
         "damaged": "minecraft:iron_bars"
@@ -194,20 +282,7 @@
       },
       {
         "char": "b",
-        "blocks": [
-          {
-            "random": 10,
-            "block": "lostruins:bricks1b"
-          },
-          {
-            "random": 9,
-            "block": "lostruins:bricks1c"
-          },
-          {
-            "random": 2000,
-            "block": "lostruins:bricks1a"
-          }
-        ]
+        "block": "minecraft:stone"
       },
       {
         "char": "B",
