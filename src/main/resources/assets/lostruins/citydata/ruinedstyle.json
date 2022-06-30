@@ -286,7 +286,7 @@
       },
       {
         "char": "B",
-        "block": "minecraft:red_nether_brick",
+        "block": "minecraft:brick_block",
         "damaged": "minecraft:iron_bars"
       },
       {
@@ -327,7 +327,20 @@
       },
       {
         "char": "x",
-        "block": "minecraft:sandstone@2"
+        "blocks": [
+          {
+            "random": 9,
+            "block": "minecraft:stonebrick@2"
+          },
+          {
+            "random": 8,
+            "block": "minecraft:stonebrick@1"
+          },
+          {
+            "random": 1000,
+            "block": "minecraft:stonebrick"
+          }
+        ]
       },
       {
         "char": "_",
