@@ -34,6 +34,10 @@ public class LostCitiesCompat
                 profile.setWorldStyle("ruined");
                 profile.setCityChancle(0.003);
                 profile.setRuinChance(0.7f, 0.1f, 0.7f);
+                int offset = 2;
+                profile.setGroundLevel(71-offset);
+                profile.setCityLevelHeights(75-offset, 83-offset, 91-offset, 99-offset);
+                profile.setOceanCorrectionBorder(0);
             });
             return null;
         }
