@@ -13,11 +13,10 @@ import static com.mcjty.lostruins.setup.Registration.createStandardProperties;
 
 public class BlockWithItem {
     private final RegistryObject<Block> block;
-    private final RegistryObject<Item> item;
 
     private BlockWithItem(String name, Supplier<Block> supplier) {
         block = Registration.BLOCKS.register(name, supplier);
-        item = Registration.ITEMS.register(block.getId().getPath(), () -> new BlockItem(block.get(), createStandardProperties()));
+        RegistryObject<Item> item = Registration.ITEMS.register(block.getId().getPath(), () -> new BlockItem(block.get(), createStandardProperties()));
     }
 
     public RegistryObject<Block> getBlock() {
