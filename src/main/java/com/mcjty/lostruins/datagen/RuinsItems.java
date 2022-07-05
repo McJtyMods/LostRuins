@@ -18,16 +18,17 @@ public class RuinsItems extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
-        simple(Registration.BRICKS1A);
-        simple(Registration.BRICKS1B);
-        simple(Registration.BRICKS1C);
+        parented(Registration.BRICKS1A);
+        parented(Registration.BRICKS1B);
+        parented(Registration.BRICKS1C);
+        parented(Registration.BRICKS1_RUBBLE);
     }
 
-    private void simple(BlockWithItem bwi) {
-        simple(bwi.getBlock());
+    private void parented(BlockWithItem bwi) {
+        parented(bwi.getBlock());
     }
 
-    private void simple(RegistryObject<Block> block) {
+    private void parented(RegistryObject<Block> block) {
         getBuilder(block.getId().getPath())
                 .parent(new ModelFile.UncheckedModelFile(modLoc("block/" + block.getId().getPath())));
     }

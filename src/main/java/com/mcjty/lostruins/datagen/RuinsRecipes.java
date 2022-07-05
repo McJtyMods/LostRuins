@@ -1,13 +1,13 @@
 package com.mcjty.lostruins.datagen;
 
+import com.mcjty.lostruins.LostRuins;
 import com.mcjty.lostruins.setup.Registration;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.data.recipes.RecipeProvider;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
-import net.minecraft.tags.ItemTags;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Items;
-import net.minecraftforge.common.Tags;
 
 import java.util.function.Consumer;
 
@@ -36,6 +36,11 @@ public class RuinsRecipes extends RecipeProvider {
                 .unlockedBy("stone", has(Items.BRICKS))
                 .group("")
                 .pattern("SS").pattern("bS").save(consumer);
+        ShapedRecipeBuilder.shaped(Registration.BRICKS1A.getBlock().get(), 1)
+                .define('S', Registration.BRICKS1_RUBBLE.getBlock().get())
+                .unlockedBy("stone", has(Items.BRICKS))
+                .group("")
+                .pattern("SS").pattern("SS").save(consumer, new ResourceLocation(LostRuins.MODID, "bricks1_rubble"));
     }
 
 }

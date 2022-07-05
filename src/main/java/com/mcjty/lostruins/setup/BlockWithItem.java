@@ -28,6 +28,6 @@ public class BlockWithItem {
     }
 
     public static BlockWithItem create(String name) {
-        return new BlockWithItem(name, () -> new Block(BlockBehaviour.Properties.of(Material.STONE)));
+        return create(name, () -> new Block(BlockBehaviour.Properties.of(Material.STONE)));
     }
 }

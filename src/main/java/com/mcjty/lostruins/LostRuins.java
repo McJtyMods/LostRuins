@@ -1,9 +1,12 @@
 package com.mcjty.lostruins;
 
 import com.mcjty.lostruins.compat.LostCitiesCompat;
+import com.mcjty.lostruins.setup.ClientSetup;
 import com.mcjty.lostruins.setup.ModSetup;
 import com.mcjty.lostruins.setup.Registration;
+import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.fml.DistExecutor;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.apache.logging.log4j.LogManager;
@@ -23,6 +26,9 @@ public class LostRuins {
         IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
         LostCitiesCompat.setupLostCitiesPre();
         bus.addListener(setup::init);
+        DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> () -> {
+            bus.addListener(ClientSetup::initClient);
+        });
     }
 
 

@@ -2,6 +2,7 @@ package com.mcjty.lostruins.setup;
 
 
 import com.mcjty.lostruins.LostRuins;
+import com.mcjty.lostruins.blocks.RubbleBlock;
 import net.minecraft.world.inventory.MenuType;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
@@ -23,6 +24,8 @@ public class Registration {
     public static final BlockWithItem BRICKS1A = BlockWithItem.create("bricks1a");
     public static final BlockWithItem BRICKS1B = BlockWithItem.create("bricks1b");
     public static final BlockWithItem BRICKS1C = BlockWithItem.create("bricks1c");
+
+    public static final BlockWithItem BRICKS1_RUBBLE = BlockWithItem.create("bricks1_rubble", RubbleBlock::new);
 
     public static void register() {
         IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();

@@ -39,6 +39,7 @@ public class RuinsLootTables extends LootTableProvider {
         addSimpleTable(tables, Registration.BRICKS1A);
         addSimpleTable(tables, Registration.BRICKS1B);
         addSimpleTable(tables, Registration.BRICKS1C);
+        addSimpleTable(tables, Registration.BRICKS1_RUBBLE);
         writeTables(cache, tables);
     }
 
