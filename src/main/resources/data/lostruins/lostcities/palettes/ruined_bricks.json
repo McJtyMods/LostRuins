@@ -1,0 +1,54 @@
+{
+  "palette": [
+    {
+      "char": "X",
+      "block": "minecraft:monster_egg@2",
+      "damaged": "minecraft:iron_bars"
+    },
+    {
+      "char": "$",
+      "block": "minecraft:double_stone_slab",
+      "damaged": "minecraft:iron_bars"
+    },
+    {
+      "char": "#",
+      "blocks": [
+        {
+          "random": 32,
+          "block": "lostruins:bricks1b"
+        },
+        {
+          "random": 32,
+          "block": "lostruins:bricks1c"
+        },
+        {
+          "random": 2000,
+          "block": "lostruins:bricks1a"
+        }
+      ],
+      "damaged": "minecraft:iron_bars"
+    },
+    {
+      "char": "}",
+      "blocks": [
+        {
+          "random": 50,
+          "block": "lostruins:bricks1_rubble"
+        },
+        {
+          "random": 15,
+          "block": "lostruins:bricks1b"
+        },
+        {
+          "random": 15,
+          "block": "lostruins:bricks1c"
+        },
+        {
+          "random": 2000,
+          "block": "lostruins:bricks1a"
+        }
+      ],
+      "damaged": "minecraft:iron_bars"
+    }
+  ]
+}

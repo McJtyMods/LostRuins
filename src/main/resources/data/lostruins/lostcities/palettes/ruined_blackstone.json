@@ -1,0 +1,32 @@
+{
+  "palette": [
+    {
+      "char": "X",
+      "block": "minecraft:monster_egg@2",
+      "damaged": "minecraft:iron_bars"
+    },
+    {
+      "char": "$",
+      "block": "minecraft:double_stone_slab",
+      "damaged": "minecraft:iron_bars"
+    },
+    {
+      "char": "#",
+      "blocks": [
+        {
+          "random": 32,
+          "block": "minecraft:polished_blackstone_bricks"
+        },
+        {
+          "random": 32,
+          "block": "minecraft:cracked_polished_blackstone_bricks"
+        },
+        {
+          "random": 1000,
+          "block": "minecraft:polished_blackstone"
+        }
+      ],
+      "damaged": "minecraft:iron_bars"
+    }
+  ]
+}
