@@ -1,0 +1,9 @@
+{
+  "outsidestyle": "outside_ruined",
+  "citystyles": [
+    {
+      "factor": 1.0,
+      "citystyle": "citystyle_ruined"
+    }
+  ]
+}
