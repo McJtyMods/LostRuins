@@ -9,11 +9,5 @@
         "citystyle": "citystyle_ruined"
       }
     ]
-  },
-  {
-    "type": "citystyle",
-    "name": "citystyle_ruined",
-    "style": "ruined",
-    "inherit": "citystyle_common"
   }
 ]
