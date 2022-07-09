@@ -9,21 +9,21 @@
     [
       {
         "factor": 1.0,
-        "palette": "default_ruined"
+        "palette": "lostruins:default_ruined"
       }
     ],
     [
       {
         "factor": 1.0,
-        "palette": "ruined_bricks"
+        "palette": "lostruins:ruined_bricks"
       },
       {
         "factor": 1.0,
-        "palette": "ruined_stone"
+        "palette": "lostruins:ruined_stone"
       },
       {
         "factor": 1.0,
-        "palette": "ruined_blackstone"
+        "palette": "lostruins:ruined_blackstone"
       },
       {
         "factor": 1.0,

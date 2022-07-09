@@ -27,7 +27,7 @@ public class LostCitiesCompat
             lc.registerProfileSetupCallback(profileSetup -> {
                 ILostCityProfile profile = profileSetup.createProfile("ruined", "ancient");
                 profile.setDescription("Very ruined cities (Lost Ruins)");
-                profile.setWorldStyle("ruined");
+                profile.setWorldStyle("lostruins:ruined");
                 profile.setCityChancle(0.003);
                 profile.setRuinChance(0.7f, 0.1f, 0.7f);
                 int offset = 2;

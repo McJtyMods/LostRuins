@@ -1,9 +1,9 @@
 {
-  "outsidestyle": "outside_ruined",
+  "outsidestyle": "lostruins:outside_ruined",
   "citystyles": [
     {
       "factor": 1.0,
-      "citystyle": "citystyle_ruined"
+      "citystyle": "lostruins:citystyle_ruined"
     }
   ]
 }
