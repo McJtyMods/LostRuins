@@ -43,7 +43,7 @@ public class RuinsLootTables extends LootTableProvider {
         writeTables(cache, tables);
     }
 
-    private void addSimpleTable(Map<ResourceLocation, LootTable> tables, BlockWithItem bwi) {
+    private void addSimpleTable(Map<ResourceLocation, LootTable> tables, BlockWithItem<?> bwi) {
         addSimpleTable(tables, bwi.getBlock().get());
     }
 

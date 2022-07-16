@@ -22,6 +22,21 @@ public class RuinsItems extends ItemModelProvider {
         parented(Registration.BRICKS1B);
         parented(Registration.BRICKS1C);
         parented(Registration.BRICKS1_RUBBLE);
+        parented(Registration.GLASSOLD);
+        parented(Registration.GLASSBROKEN1);
+        parented(Registration.GLASSBROKEN2);
+        parented(Registration.GLASSBROKEN3);
+        parented(Registration.GLASSBROKEN4);
+        parented(Registration.GLASSBROKEN5);
+        parented(Registration.GLASSBROKENALL);
+        parented(Registration.GLASSBROKENFRAME);
+        parented(Registration.GLASSPANE_BROKEN1);
+        parented(Registration.GLASSPANE_BROKEN2);
+        parented(Registration.GLASSPANE_BROKEN3);
+        parented(Registration.GLASSPANE_BROKEN4);
+        parented(Registration.GLASSPANE_BROKEN5);
+        parented(Registration.GLASSPANE_BROKENALL);
+        parented(Registration.GLASSPANE_BROKENFRAME);
     }
 
     private void parented(BlockWithItem bwi) {

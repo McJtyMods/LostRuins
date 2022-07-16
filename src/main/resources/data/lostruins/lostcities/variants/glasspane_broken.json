@@ -1,0 +1,36 @@
+{
+  "blocks": [
+    {
+      "random": 2,
+      "block": "lostruins:glasspane_brokenframe"
+    },
+    {
+      "random": 2,
+      "block": "lostruins:glasspane_brokenall"
+    },
+    {
+      "random": 4,
+      "block": "lostruins:glasspane_broken1"
+    },
+    {
+      "random": 4,
+      "block": "lostruins:glasspane_broken2"
+    },
+    {
+      "random": 4,
+      "block": "lostruins:glasspane_broken3"
+    },
+    {
+      "random": 4,
+      "block": "lostruins:glasspane_broken4"
+    },
+    {
+      "random": 4,
+      "block": "lostruins:glasspane_broken5"
+    },
+    {
+      "random": 1000,
+      "block": "lostruins:glasspane_old"
+    }
+  ]
+}

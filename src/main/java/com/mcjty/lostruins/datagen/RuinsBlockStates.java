@@ -4,8 +4,12 @@ import com.mcjty.lostruins.LostRuins;
 import com.mcjty.lostruins.setup.BlockWithItem;
 import com.mcjty.lostruins.setup.Registration;
 import net.minecraft.data.DataGenerator;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
-import net.minecraftforge.client.model.generators.*;
+import net.minecraftforge.client.model.generators.BlockModelBuilder;
+import net.minecraftforge.client.model.generators.BlockStateProvider;
+import net.minecraftforge.client.model.generators.ConfiguredModel;
+import net.minecraftforge.client.model.generators.VariantBlockStateBuilder;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.RegistryObject;
 
@@ -21,6 +25,23 @@ public class RuinsBlockStates extends BlockStateProvider {
         simple(Registration.BRICKS1B);
         simple(Registration.BRICKS1C);
         rubble(Registration.BRICKS1_RUBBLE.getBlock(), "bricks1a");
+        simple(Registration.GLASSOLD);
+        simple(Registration.GLASSBROKEN1);
+        simple(Registration.GLASSBROKEN2);
+        simple(Registration.GLASSBROKEN3);
+        simple(Registration.GLASSBROKEN4);
+        simple(Registration.GLASSBROKEN5);
+        simple(Registration.GLASSBROKENALL);
+        simple(Registration.GLASSBROKENFRAME);
+        paneBlock(Registration.GLASSPANE_OLD.getBlock().get(), new ResourceLocation(LostRuins.MODID, "block/glassold"), new ResourceLocation(LostRuins.MODID, "block/glassold"));
+        paneBlock(Registration.GLASSPANE_BROKEN1.getBlock().get(), new ResourceLocation(LostRuins.MODID, "block/glassbroken1"), new ResourceLocation(LostRuins.MODID, "block/glassbroken1"));
+        paneBlock(Registration.GLASSPANE_BROKEN2.getBlock().get(), new ResourceLocation(LostRuins.MODID, "block/glassbroken2"), new ResourceLocation(LostRuins.MODID, "block/glassbroken2"));
+        paneBlock(Registration.GLASSPANE_BROKEN3.getBlock().get(), new ResourceLocation(LostRuins.MODID, "block/glassbroken3"), new ResourceLocation(LostRuins.MODID, "block/glassbroken3"));
+        paneBlock(Registration.GLASSPANE_BROKEN4.getBlock().get(), new ResourceLocation(LostRuins.MODID, "block/glassbroken4"), new ResourceLocation(LostRuins.MODID, "block/glassbroken4"));
+        paneBlock(Registration.GLASSPANE_BROKEN5.getBlock().get(), new ResourceLocation(LostRuins.MODID, "block/glassbroken5"), new ResourceLocation(LostRuins.MODID, "block/glassbroken5"));
+        paneBlock(Registration.GLASSPANE_BROKENALL.getBlock().get(), new ResourceLocation(LostRuins.MODID, "block/glassbrokenall"), new ResourceLocation(LostRuins.MODID, "block/glassbrokenall"));
+        paneBlock(Registration.GLASSPANE_BROKENFRAME.getBlock().get(), new ResourceLocation(LostRuins.MODID, "block/glassbrokenframe"), new ResourceLocation(LostRuins.MODID, "block/glassbrokenframe"));
+
     }
 
     private void simple(BlockWithItem bwi) {

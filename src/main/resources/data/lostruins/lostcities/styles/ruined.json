@@ -41,35 +41,11 @@
       },
       {
         "factor": 1.0,
-        "palette": "glass_full_white"
+        "palette": "lostruins:glass_broken"
       },
       {
         "factor": 1.0,
-        "palette": "glass_pane_white"
-      },
-      {
-        "factor": 1.0,
-        "palette": "glass_full_blue"
-      },
-      {
-        "factor": 1.0,
-        "palette": "glass_pane_blue"
-      },
-      {
-        "factor": 1.0,
-        "palette": "glass_full_light_blue"
-      },
-      {
-        "factor": 1.0,
-        "palette": "glass_pane_light_blue"
-      },
-      {
-        "factor": 1.0,
-        "palette": "glass_full_gray"
-      },
-      {
-        "factor": 1.0,
-        "palette": "glass_pane_gray"
+        "palette": "lostruins:glasspane_broken"
       }
     ],
     [

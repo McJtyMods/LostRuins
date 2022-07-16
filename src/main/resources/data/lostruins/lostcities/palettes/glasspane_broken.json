@@ -1,0 +1,16 @@
+{
+  "palette": [
+    {
+      "char": "+",
+      "variant": "lostruins:glass_broken"
+    },
+    {
+      "char": "`",
+      "block": "lostruins:glasspane_broken"
+    },
+    {
+      "char": "a",
+      "variant": "lostruins:glasspane_broken"
+    }
+  ]
+}

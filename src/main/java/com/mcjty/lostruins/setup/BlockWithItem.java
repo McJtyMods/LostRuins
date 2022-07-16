@@ -11,23 +11,23 @@ import java.util.function.Supplier;
 
 import static com.mcjty.lostruins.setup.Registration.createStandardProperties;
 
-public class BlockWithItem {
-    private final RegistryObject<Block> block;
+public class BlockWithItem<T extends Block> {
+    private final RegistryObject<T> block;
 
-    private BlockWithItem(String name, Supplier<Block> supplier) {
+    private BlockWithItem(String name, Supplier<T> supplier) {
         block = Registration.BLOCKS.register(name, supplier);
         RegistryObject<Item> item = Registration.ITEMS.register(block.getId().getPath(), () -> new BlockItem(block.get(), createStandardProperties()));
     }
 
-    public RegistryObject<Block> getBlock() {
+    public RegistryObject<T> getBlock() {
         return block;
     }
 
-    public static BlockWithItem create(String name, Supplier<Block> supplier) {
-        return new BlockWithItem(name, supplier);
+    public static <T extends Block> BlockWithItem<T> create(String name, Supplier<T> supplier) {
+        return new BlockWithItem<T>(name, supplier);
     }
 
-    public static BlockWithItem create(String name) {
+    public static BlockWithItem<Block> create(String name) {
         return create(name, () -> new Block(BlockBehaviour.Properties.of(Material.STONE)));
     }
 }
