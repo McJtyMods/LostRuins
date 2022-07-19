@@ -32,6 +32,8 @@ public class Registration {
     public static final BlockWithItem<Block> BRICKS1C = BlockWithItem.create("bricks1c");
 
     public static final BlockWithItem<Block> BRICKS1_RUBBLE = BlockWithItem.create("bricks1_rubble", RubbleBlock::new);
+    public static final BlockWithItem<Block> STONE_RUBBLE = BlockWithItem.create("stone_rubble", RubbleBlock::new);
+    public static final BlockWithItem<Block> STONEBRICKS_RUBBLE = BlockWithItem.create("stonebricks_rubble", RubbleBlock::new);
 
     public static final BlockWithItem<VariantGlassBlock> GLASSOLD = BlockWithItem.create("glassold", () -> new VariantGlassBlock(createGlassProperties()));
     public static final BlockWithItem<VariantGlassBlock> GLASSBROKEN1 = BlockWithItem.create("glassbroken1", () -> new VariantGlassBlock(createGlassProperties()));
