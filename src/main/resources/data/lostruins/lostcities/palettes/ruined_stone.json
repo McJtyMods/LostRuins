@@ -31,6 +31,36 @@
         }
       ],
       "damaged": "minecraft:iron_bars"
+    },
+    {
+      "char": "}",
+      "blocks": [
+        {
+          "random": 30,
+          "block": "lostruins:stone_rubble"
+        },
+        {
+          "random": 30,
+          "block": "lostruins:stonebricks_rubble"
+        },
+        {
+          "random": 15,
+          "block": "minecraft:mossy_stone_bricks"
+        },
+        {
+          "random": 15,
+          "block": "minecraft:cracked_stone_bricks"
+        },
+        {
+          "random": 15,
+          "block": "minecraft:stone_bricks"
+        },
+        {
+          "random": 2000,
+          "block": "minecraft:stone"
+        }
+      ],
+      "damaged": "minecraft:iron_bars"
     }
   ]
 }

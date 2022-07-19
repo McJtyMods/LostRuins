@@ -1,0 +1,36 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "lostruins:block/stone_rubble"
+      },
+      {
+        "model": "lostruins:block/stone_rubble",
+        "y": 90
+      },
+      {
+        "model": "lostruins:block/stone_rubble",
+        "y": 180
+      },
+      {
+        "model": "lostruins:block/stone_rubble",
+        "y": 270
+      },
+      {
+        "model": "lostruins:block/stone_rubble"
+      },
+      {
+        "model": "lostruins:block/stone_rubble",
+        "y": 90
+      },
+      {
+        "model": "lostruins:block/stone_rubble",
+        "y": 180
+      },
+      {
+        "model": "lostruins:block/stone_rubble",
+        "y": 270
+      }
+    ]
+  }
+}

@@ -22,6 +22,8 @@ public class RuinsItems extends ItemModelProvider {
         parented(Registration.BRICKS1B);
         parented(Registration.BRICKS1C);
         parented(Registration.BRICKS1_RUBBLE);
+        parented(Registration.STONE_RUBBLE);
+        parented(Registration.STONEBRICKS_RUBBLE);
         parented(Registration.GLASSOLD);
         parented(Registration.GLASSBROKEN1);
         parented(Registration.GLASSBROKEN2);

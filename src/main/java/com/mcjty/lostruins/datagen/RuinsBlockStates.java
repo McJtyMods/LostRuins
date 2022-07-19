@@ -25,6 +25,8 @@ public class RuinsBlockStates extends BlockStateProvider {
         simple(Registration.BRICKS1B);
         simple(Registration.BRICKS1C);
         rubble(Registration.BRICKS1_RUBBLE.getBlock(), "bricks1a");
+        rubble(Registration.STONE_RUBBLE.getBlock(), mcLoc("block/stone"));
+        rubble(Registration.STONEBRICKS_RUBBLE.getBlock(), mcLoc("block/stone_bricks"));
         simple(Registration.GLASSOLD);
         simple(Registration.GLASSBROKEN1);
         simple(Registration.GLASSBROKEN2);
@@ -53,21 +55,26 @@ public class RuinsBlockStates extends BlockStateProvider {
     }
 
     private void rubble(RegistryObject<Block> block, String texture) {
+        ResourceLocation txt = modLoc("block/" + texture);
+        rubble(block, txt);
+    }
+
+    private void rubble(RegistryObject<Block> block, ResourceLocation txt) {
         BlockModelBuilder frame1 = models().getBuilder("block/" + block.getId().getPath());
         frame1.parent(models().getExistingFile(mcLoc("cube")));
         cube(frame1, 1f, 0f, 1f, 5f, 5f, 6f);
         cube(frame1, 6f, 0f, 2f, 11f, 3f, 4f);
         cube(frame1, 4f, 0f, 5f, 8f, 4f, 11f);
-        frame1.texture("txt", modLoc("block/" + texture));
-        frame1.texture("particle", modLoc("block/" + texture));
+        frame1.texture("txt", txt);
+        frame1.texture("particle", txt);
 
         BlockModelBuilder frame2 = models().getBuilder("block/" + block.getId().getPath());
         frame2.parent(models().getExistingFile(mcLoc("cube")));
         cube(frame2, 7f, 0f, 2f, 13f, 6f, 7f);
         cube(frame2, 1f, 0f, 11f, 3f, 3f, 13f);
         cube(frame2, 4f, 0f, 6f, 9f, 5f, 9f);
-        frame2.texture("txt", modLoc("block/" + texture));
-        frame2.texture("particle", modLoc("block/" + texture));
+        frame2.texture("txt", txt);
+        frame2.texture("particle", txt);
 
         VariantBlockStateBuilder bld = getVariantBuilder(block.get());
         bld.partialState().addModels(
@@ -79,7 +86,7 @@ public class RuinsBlockStates extends BlockStateProvider {
                 new ConfiguredModel(frame2, 0, 90, false),
                 new ConfiguredModel(frame2, 0, 180, false),
                 new ConfiguredModel(frame2, 0, 270, false)
-                );
+        );
     }
 
     private void cube(BlockModelBuilder builder, float fx, float fy, float fz, float tx, float ty, float tz) {

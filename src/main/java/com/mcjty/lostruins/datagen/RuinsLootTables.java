@@ -40,6 +40,15 @@ public class RuinsLootTables extends LootTableProvider {
         addSimpleTable(tables, Registration.BRICKS1B);
         addSimpleTable(tables, Registration.BRICKS1C);
         addSimpleTable(tables, Registration.BRICKS1_RUBBLE);
+        addSimpleTable(tables, Registration.STONE_RUBBLE);
+        addSimpleTable(tables, Registration.STONEBRICKS_RUBBLE);
+        addSimpleTable(tables, Registration.GLASSBROKEN1);
+        addSimpleTable(tables, Registration.GLASSBROKEN2);
+        addSimpleTable(tables, Registration.GLASSBROKEN3);
+        addSimpleTable(tables, Registration.GLASSBROKEN4);
+        addSimpleTable(tables, Registration.GLASSBROKEN5);
+        addSimpleTable(tables, Registration.GLASSBROKENALL);
+        addSimpleTable(tables, Registration.GLASSBROKENFRAME);
         writeTables(cache, tables);
     }
 
