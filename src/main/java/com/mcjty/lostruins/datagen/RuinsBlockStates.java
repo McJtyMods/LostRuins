@@ -27,13 +27,13 @@ public class RuinsBlockStates extends BlockStateProvider {
         rubble(Registration.BRICKS1_RUBBLE.getBlock(), "bricks1a");
         rubble(Registration.STONE_RUBBLE.getBlock(), mcLoc("block/stone"));
         rubble(Registration.STONEBRICKS_RUBBLE.getBlock(), mcLoc("block/stone_bricks"));
-        simple(Registration.GLASSOLD);
+        simple(Registration.GLASSGRAY3X2_COMPLETE);
         simple(Registration.GLASSBROKEN1);
         simple(Registration.GLASSBROKEN2);
         simple(Registration.GLASSBROKEN3);
         simple(Registration.GLASSBROKEN4);
         simple(Registration.GLASSBROKEN5);
-        simple(Registration.GLASSBROKENALL);
+        simple(Registration.GLASSGRAY3X2_BROKEN_ALL);
         simple(Registration.GLASSBROKENFRAME);
         paneBlock(Registration.GLASSPANE_OLD.getBlock().get(), new ResourceLocation(LostRuins.MODID, "block/glassold"), new ResourceLocation(LostRuins.MODID, "block/glassold"));
         paneBlock(Registration.GLASSPANE_BROKEN1.getBlock().get(), new ResourceLocation(LostRuins.MODID, "block/glassbroken1"), new ResourceLocation(LostRuins.MODID, "block/glassbroken1"));

@@ -12,9 +12,9 @@ public class ClientSetup {
         ItemBlockRenderTypes.setRenderLayer(Registration.GLASSBROKEN3.getBlock().get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(Registration.GLASSBROKEN4.getBlock().get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(Registration.GLASSBROKEN5.getBlock().get(), RenderType.translucent());
-        ItemBlockRenderTypes.setRenderLayer(Registration.GLASSBROKENALL.getBlock().get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(Registration.GLASSGRAY3X2_BROKEN_ALL.getBlock().get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(Registration.GLASSBROKENFRAME.getBlock().get(), RenderType.translucent());
-        ItemBlockRenderTypes.setRenderLayer(Registration.GLASSOLD.getBlock().get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(Registration.GLASSGRAY3X2_COMPLETE.getBlock().get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(Registration.GLASSPANE_BROKEN1.getBlock().get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(Registration.GLASSPANE_BROKEN2.getBlock().get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(Registration.GLASSPANE_BROKEN3.getBlock().get(), RenderType.translucent());

@@ -35,13 +35,13 @@ public class Registration {
     public static final BlockWithItem<Block> STONE_RUBBLE = BlockWithItem.create("stone_rubble", RubbleBlock::new);
     public static final BlockWithItem<Block> STONEBRICKS_RUBBLE = BlockWithItem.create("stonebricks_rubble", RubbleBlock::new);
 
-    public static final BlockWithItem<VariantGlassBlock> GLASSOLD = BlockWithItem.create("glassold", () -> new VariantGlassBlock(createGlassProperties()));
-    public static final BlockWithItem<VariantGlassBlock> GLASSBROKEN1 = BlockWithItem.create("glassbroken1", () -> new VariantGlassBlock(createGlassProperties()));
-    public static final BlockWithItem<VariantGlassBlock> GLASSBROKEN2 = BlockWithItem.create("glassbroken2", () -> new VariantGlassBlock(createGlassProperties()));
-    public static final BlockWithItem<VariantGlassBlock> GLASSBROKEN3 = BlockWithItem.create("glassbroken3", () -> new VariantGlassBlock(createGlassProperties()));
-    public static final BlockWithItem<VariantGlassBlock> GLASSBROKEN4 = BlockWithItem.create("glassbroken4", () -> new VariantGlassBlock(createGlassProperties()));
-    public static final BlockWithItem<VariantGlassBlock> GLASSBROKEN5 = BlockWithItem.create("glassbroken5", () -> new VariantGlassBlock(createGlassProperties()));
-    public static final BlockWithItem<VariantGlassBlock> GLASSBROKENALL = BlockWithItem.create("glassbrokenall", () -> new VariantGlassBlock(createGlassProperties()));
+    public static final BlockWithItem<VariantGlassBlock> GLASSGRAY3X2_COMPLETE = BlockWithItem.create("glassgray3x2_complete", () -> new VariantGlassBlock(createGlassProperties()));
+    public static final BlockWithItem<VariantGlassBlock> GLASSGRAY3X2_BROKEN1 = BlockWithItem.create("glassgray3x2_broken1", () -> new VariantGlassBlock(createGlassProperties()));
+    public static final BlockWithItem<VariantGlassBlock> GLASSGRAY3X2_BROKEN2 = BlockWithItem.create("glassgray3x2_broken2", () -> new VariantGlassBlock(createGlassProperties()));
+    public static final BlockWithItem<VariantGlassBlock> GLASSGRAY3X2_BROKEN3 = BlockWithItem.create("glassgray3x2_broken3", () -> new VariantGlassBlock(createGlassProperties()));
+    public static final BlockWithItem<VariantGlassBlock> GLASSGRAY3X2_BROKEN4 = BlockWithItem.create("glassgray3x2_broken4", () -> new VariantGlassBlock(createGlassProperties()));
+    public static final BlockWithItem<VariantGlassBlock> GLASSGRAY3X2_BROKEN5 = BlockWithItem.create("glassgray3x2_broken5", () -> new VariantGlassBlock(createGlassProperties()));
+    public static final BlockWithItem<VariantGlassBlock> GLASSGRAY3X2_BROKEN_ALL = BlockWithItem.create("glassgray3x2_broken_all", () -> new VariantGlassBlock(createGlassProperties()));
     public static final BlockWithItem<VariantGlassBlock> GLASSBROKENFRAME = BlockWithItem.create("glassbrokenframe", () -> new VariantGlassBlock(createGlassProperties()));
 
     public static final BlockWithItem<IronBarsBlock> GLASSPANE_OLD = BlockWithItem.create("glasspane_old", () -> new IronBarsBlock(createGlassProperties()));
