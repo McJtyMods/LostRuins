@@ -2,15 +2,15 @@
   "palette": [
     {
       "char": "+",
-      "variant": "lostruins:glass_broken"
+      "variant": "lostruins:oldglass"
     },
     {
       "char": "`",
-      "block": "lostruins:glasspane_broken"
+      "block": "lostruins:oldglasspane"
     },
     {
       "char": "a",
-      "variant": "lostruins:glass_broken"
+      "variant": "lostruins:oldglass"
     }
   ]
 }

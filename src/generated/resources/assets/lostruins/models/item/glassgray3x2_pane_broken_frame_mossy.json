@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "lostruins:block/glassgray3x2/broken_frame_mossy"
+  }
+}

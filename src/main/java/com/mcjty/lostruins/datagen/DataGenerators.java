@@ -19,6 +19,7 @@ public class DataGenerators {
         if (event.includeClient()) {
             generator.addProvider(new RuinsBlockStates(generator, event.getExistingFileHelper()));
             generator.addProvider(new RuinsItems(generator, event.getExistingFileHelper()));
+            generator.addProvider(new RuinsLanguageProvider(generator, "en_us"));
         }
     }
 }

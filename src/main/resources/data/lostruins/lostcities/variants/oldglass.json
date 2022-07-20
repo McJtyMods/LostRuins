@@ -1,0 +1,68 @@
+{
+  "blocks": [
+    {
+      "random": 2,
+      "block": "lostruins:glassgray3x2_broken_frame"
+    },
+    {
+      "random": 2,
+      "block": "lostruins:glassgray3x2_broken_frame_mossy"
+    },
+    {
+      "random": 2,
+      "block": "lostruins:glassgray3x2_broken_mossy"
+    },
+    {
+      "random": 2,
+      "block": "lostruins:glassgray3x2_broken_mossy_vines"
+    },
+    {
+      "random": 2,
+      "block": "lostruins:glassgray3x2_broken_frame_vines"
+    },
+    {
+      "random": 2,
+      "block": "lostruins:glassgray3x2_broken_frame_mossy_vines"
+    },
+    {
+      "random": 1,
+      "block": "lostruins:glassgray3x2_broken_all"
+    },
+    {
+      "random": 1,
+      "block": "lostruins:glassgray3x2_broken_all_mossy"
+    },
+    {
+      "random": 2,
+      "block": "lostruins:glassgray3x2_broken1"
+    },
+    {
+      "random": 2,
+      "block": "lostruins:glassgray3x2_broken2"
+    },
+    {
+      "random": 2,
+      "block": "lostruins:glassgray3x2_broken3"
+    },
+    {
+      "random": 2,
+      "block": "lostruins:glassgray3x2_broken4"
+    },
+    {
+      "random": 2,
+      "block": "lostruins:glassgray3x2_broken5"
+    },
+    {
+      "random": 10,
+      "block": "lostruins:glassgray3x2_complete_mossy"
+    },
+    {
+      "random": 10,
+      "block": "lostruins:glassgray3x2_complete_mossy_vines"
+    },
+    {
+      "random": 1000,
+      "block": "lostruins:glassgray3x2_complete"
+    }
+  ]
+}

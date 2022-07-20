@@ -1,13 +1,11 @@
 package com.mcjty.lostruins.setup;
 
 
+import com.google.common.collect.Lists;
 import com.mcjty.lostruins.LostRuins;
-import com.mcjty.lostruins.blocks.RubbleBlock;
-import com.mcjty.lostruins.blocks.VariantGlassBlock;
 import net.minecraft.world.inventory.MenuType;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.IronBarsBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -19,6 +17,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import org.jetbrains.annotations.NotNull;
 
 import static com.mcjty.lostruins.LostRuins.MODID;
+import static com.mcjty.lostruins.setup.BlockWithItem.*;
 
 public class Registration {
 
@@ -27,31 +26,36 @@ public class Registration {
     public static final DeferredRegister<BlockEntityType<?>> TILES = DeferredRegister.create(ForgeRegistries.BLOCK_ENTITIES, MODID);
     public static final DeferredRegister<MenuType<?>> CONTAINERS = DeferredRegister.create(ForgeRegistries.CONTAINERS, MODID);
 
-    public static final BlockWithItem<Block> BRICKS1A = BlockWithItem.create("bricks1a");
-    public static final BlockWithItem<Block> BRICKS1B = BlockWithItem.create("bricks1b");
-    public static final BlockWithItem<Block> BRICKS1C = BlockWithItem.create("bricks1c");
+    private static String lrTxt(String txt) {
+        return "lostruins:block/" + txt;
+    }
 
-    public static final BlockWithItem<Block> BRICKS1_RUBBLE = BlockWithItem.create("bricks1_rubble", RubbleBlock::new);
-    public static final BlockWithItem<Block> STONE_RUBBLE = BlockWithItem.create("stone_rubble", RubbleBlock::new);
-    public static final BlockWithItem<Block> STONEBRICKS_RUBBLE = BlockWithItem.create("stonebricks_rubble", RubbleBlock::new);
+    private static String mcTxt(String txt) {
+        return "minecraft:block/" + txt;
+    }
 
-    public static final BlockWithItem<VariantGlassBlock> GLASSGRAY3X2_COMPLETE = BlockWithItem.create("glassgray3x2_complete", () -> new VariantGlassBlock(createGlassProperties()));
-    public static final BlockWithItem<VariantGlassBlock> GLASSGRAY3X2_BROKEN1 = BlockWithItem.create("glassgray3x2_broken1", () -> new VariantGlassBlock(createGlassProperties()));
-    public static final BlockWithItem<VariantGlassBlock> GLASSGRAY3X2_BROKEN2 = BlockWithItem.create("glassgray3x2_broken2", () -> new VariantGlassBlock(createGlassProperties()));
-    public static final BlockWithItem<VariantGlassBlock> GLASSGRAY3X2_BROKEN3 = BlockWithItem.create("glassgray3x2_broken3", () -> new VariantGlassBlock(createGlassProperties()));
-    public static final BlockWithItem<VariantGlassBlock> GLASSGRAY3X2_BROKEN4 = BlockWithItem.create("glassgray3x2_broken4", () -> new VariantGlassBlock(createGlassProperties()));
-    public static final BlockWithItem<VariantGlassBlock> GLASSGRAY3X2_BROKEN5 = BlockWithItem.create("glassgray3x2_broken5", () -> new VariantGlassBlock(createGlassProperties()));
-    public static final BlockWithItem<VariantGlassBlock> GLASSGRAY3X2_BROKEN_ALL = BlockWithItem.create("glassgray3x2_broken_all", () -> new VariantGlassBlock(createGlassProperties()));
-    public static final BlockWithItem<VariantGlassBlock> GLASSBROKENFRAME = BlockWithItem.create("glassbrokenframe", () -> new VariantGlassBlock(createGlassProperties()));
+    static {
+        simple("bricks1a", lrTxt("bricks1/bricks1a"), "Bricks 1");
+        simple("bricks1b", lrTxt("bricks1/bricks1b"), "Bricks 1");
+        simple("bricks1c", lrTxt("bricks1/bricks1c"), "Bricks 1");
 
-    public static final BlockWithItem<IronBarsBlock> GLASSPANE_OLD = BlockWithItem.create("glasspane_old", () -> new IronBarsBlock(createGlassProperties()));
-    public static final BlockWithItem<IronBarsBlock> GLASSPANE_BROKEN1 = BlockWithItem.create("glasspane_broken1", () -> new IronBarsBlock(createGlassProperties()));
-    public static final BlockWithItem<IronBarsBlock> GLASSPANE_BROKEN2 = BlockWithItem.create("glasspane_broken2", () -> new IronBarsBlock(createGlassProperties()));
-    public static final BlockWithItem<IronBarsBlock> GLASSPANE_BROKEN3 = BlockWithItem.create("glasspane_broken3", () -> new IronBarsBlock(createGlassProperties()));
-    public static final BlockWithItem<IronBarsBlock> GLASSPANE_BROKEN4 = BlockWithItem.create("glasspane_broken4", () -> new IronBarsBlock(createGlassProperties()));
-    public static final BlockWithItem<IronBarsBlock> GLASSPANE_BROKEN5 = BlockWithItem.create("glasspane_broken5", () -> new IronBarsBlock(createGlassProperties()));
-    public static final BlockWithItem<IronBarsBlock> GLASSPANE_BROKENALL = BlockWithItem.create("glasspane_brokenall", () -> new IronBarsBlock(createGlassProperties()));
-    public static final BlockWithItem<IronBarsBlock> GLASSPANE_BROKENFRAME = BlockWithItem.create("glasspane_brokenframe", () -> new IronBarsBlock(createGlassProperties()));
+        rubble("bricks1_rubble", lrTxt("bricks1/bricks1a"), "Brick rubble");
+        rubble("stone_rubble", mcTxt("stone"), "Stone rubble");
+        rubble("stonebricks_rubble", mcTxt("stone_bricks"), "Stone brick rubble");
+        rubble("blackstone_rubble", mcTxt("blackstone"), "Blackstone rubble");
+        rubble("blackstonebricks_rubble", mcTxt("polished_blackstone_bricks"), "Blackstone brick rubble");
+
+        for (String s : Lists.newArrayList(
+                "complete", "complete_mossy", "complete_mossy_vines",
+                "broken1", "broken2", "broken3", "broken4", "broken5",
+                "broken_all", "broken_all_mossy",
+                "broken_frame", "broken_frame_mossy", "broken_frame_vines", "broken_frame_mossy_vines",
+                "broken_mossy", "broken_mossy_vines"
+                )) {
+            glass("glassgray3x2_" + s, lrTxt("glassgray3x2/" + s), "Old glass");
+            pane("glassgray3x2_pane_" + s, lrTxt("glassgray3x2/" + s), "Old glass pane");
+        }
+    }
 
     public static void register() {
         IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
@@ -67,7 +71,7 @@ public class Registration {
     }
 
     @NotNull
-    private static BlockBehaviour.Properties createGlassProperties() {
+    public static BlockBehaviour.Properties createGlassProperties() {
         return BlockBehaviour.Properties.of(Material.GLASS).strength(0.3F).sound(SoundType.GLASS).noOcclusion();
     }
 }

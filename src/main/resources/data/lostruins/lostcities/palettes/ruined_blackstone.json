@@ -27,6 +27,32 @@
         }
       ],
       "damaged": "minecraft:iron_bars"
+    },
+    {
+      "char": "}",
+      "blocks": [
+        {
+          "random": 30,
+          "block": "lostruins:blackstone_rubble"
+        },
+        {
+          "random": 40,
+          "block": "lostruins:blackstonebricks_rubble"
+        },
+        {
+          "random": 10,
+          "block": "minecraft:polished_blackstone_bricks"
+        },
+        {
+          "random": 10,
+          "block": "minecraft:cracked_polished_blackstone_bricks"
+        },
+        {
+          "random": 1000,
+          "block": "minecraft:polished_blackstone"
+        }
+      ],
+      "damaged": "minecraft:iron_bars"
     }
   ]
 }

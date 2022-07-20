@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/template_glass_pane_side_alt",
+  "textures": {
+    "pane": "lostruins:block/glassgray3x2/broken_frame_mossy_vines",
+    "edge": "lostruins:block/glassgray3x2/broken_frame_mossy_vines"
+  }
+}

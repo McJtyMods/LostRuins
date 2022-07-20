@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cube_all",
   "textures": {
-    "all": "lostruins:block/bricks1b"
+    "all": "lostruins:block/bricks1/bricks1b"
   }
 }

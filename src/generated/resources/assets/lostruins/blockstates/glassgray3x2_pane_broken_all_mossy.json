@@ -1,0 +1,77 @@
+{
+  "multipart": [
+    {
+      "apply": {
+        "model": "lostruins:block/glassgray3x2_pane_broken_all_mossy_post"
+      }
+    },
+    {
+      "when": {
+        "north": "true"
+      },
+      "apply": {
+        "model": "lostruins:block/glassgray3x2_pane_broken_all_mossy_side"
+      }
+    },
+    {
+      "when": {
+        "north": "false"
+      },
+      "apply": {
+        "model": "lostruins:block/glassgray3x2_pane_broken_all_mossy_noside"
+      }
+    },
+    {
+      "when": {
+        "south": "true"
+      },
+      "apply": {
+        "model": "lostruins:block/glassgray3x2_pane_broken_all_mossy_side_alt"
+      }
+    },
+    {
+      "when": {
+        "south": "false"
+      },
+      "apply": {
+        "model": "lostruins:block/glassgray3x2_pane_broken_all_mossy_noside_alt",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "west": "true"
+      },
+      "apply": {
+        "model": "lostruins:block/glassgray3x2_pane_broken_all_mossy_side_alt",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "west": "false"
+      },
+      "apply": {
+        "model": "lostruins:block/glassgray3x2_pane_broken_all_mossy_noside",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "east": "true"
+      },
+      "apply": {
+        "model": "lostruins:block/glassgray3x2_pane_broken_all_mossy_side",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "east": "false"
+      },
+      "apply": {
+        "model": "lostruins:block/glassgray3x2_pane_broken_all_mossy_noside_alt"
+      }
+    }
+  ]
+}

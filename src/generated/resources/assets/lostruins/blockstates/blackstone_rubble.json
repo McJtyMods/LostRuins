@@ -1,0 +1,36 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "lostruins:block/blackstone_rubble"
+      },
+      {
+        "model": "lostruins:block/blackstone_rubble",
+        "y": 90
+      },
+      {
+        "model": "lostruins:block/blackstone_rubble",
+        "y": 180
+      },
+      {
+        "model": "lostruins:block/blackstone_rubble",
+        "y": 270
+      },
+      {
+        "model": "lostruins:block/blackstone_rubble"
+      },
+      {
+        "model": "lostruins:block/blackstone_rubble",
+        "y": 90
+      },
+      {
+        "model": "lostruins:block/blackstone_rubble",
+        "y": 180
+      },
+      {
+        "model": "lostruins:block/blackstone_rubble",
+        "y": 270
+      }
+    ]
+  }
+}

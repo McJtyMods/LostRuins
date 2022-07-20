@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:block/template_glass_pane_post",
-  "textures": {
-    "pane": "lostruins:block/glassbroken1",
-    "edge": "lostruins:block/glassbroken1"
-  }
-}

@@ -36,19 +36,10 @@ public class RuinsLootTables extends LootTableProvider {
     @Override
     public void run(HashCache cache) {
         Map<ResourceLocation, LootTable> tables = new HashMap<>();
-        addSimpleTable(tables, Registration.BRICKS1A);
-        addSimpleTable(tables, Registration.BRICKS1B);
-        addSimpleTable(tables, Registration.BRICKS1C);
-        addSimpleTable(tables, Registration.BRICKS1_RUBBLE);
-        addSimpleTable(tables, Registration.STONE_RUBBLE);
-        addSimpleTable(tables, Registration.STONEBRICKS_RUBBLE);
-        addSimpleTable(tables, Registration.GLASSBROKEN1);
-        addSimpleTable(tables, Registration.GLASSBROKEN2);
-        addSimpleTable(tables, Registration.GLASSBROKEN3);
-        addSimpleTable(tables, Registration.GLASSBROKEN4);
-        addSimpleTable(tables, Registration.GLASSBROKEN5);
-        addSimpleTable(tables, Registration.GLASSGRAY3X2_BROKEN_ALL);
-        addSimpleTable(tables, Registration.GLASSBROKENFRAME);
+        BlockWithItem.getSimpleBlocks().forEach(entry -> addSimpleTable(tables, entry.getKey()));
+        BlockWithItem.getGlassBlocks().forEach(entry -> addSimpleTable(tables, entry.getKey()));
+        BlockWithItem.getPaneBlocks().forEach(entry -> addSimpleTable(tables, entry.getKey()));
+        BlockWithItem.getRubbleBlocks().forEach(entry -> addSimpleTable(tables, entry.getKey()));
         writeTables(cache, tables);
     }
 

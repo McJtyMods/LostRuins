@@ -2,8 +2,8 @@ package com.mcjty.lostruins.datagen;
 
 import com.mcjty.lostruins.LostRuins;
 import com.mcjty.lostruins.setup.BlockWithItem;
-import com.mcjty.lostruins.setup.Registration;
 import net.minecraft.data.DataGenerator;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.client.model.generators.ModelFile;
@@ -18,37 +18,26 @@ public class RuinsItems extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
-        parented(Registration.BRICKS1A);
-        parented(Registration.BRICKS1B);
-        parented(Registration.BRICKS1C);
-        parented(Registration.BRICKS1_RUBBLE);
-        parented(Registration.STONE_RUBBLE);
-        parented(Registration.STONEBRICKS_RUBBLE);
-        parented(Registration.GLASSGRAY3X2_COMPLETE);
-        parented(Registration.GLASSBROKEN1);
-        parented(Registration.GLASSBROKEN2);
-        parented(Registration.GLASSBROKEN3);
-        parented(Registration.GLASSBROKEN4);
-        parented(Registration.GLASSBROKEN5);
-        parented(Registration.GLASSGRAY3X2_BROKEN_ALL);
-        parented(Registration.GLASSBROKENFRAME);
-        parented(Registration.GLASSPANE_BROKEN1);
-        parented(Registration.GLASSPANE_BROKEN2);
-        parented(Registration.GLASSPANE_BROKEN3);
-        parented(Registration.GLASSPANE_BROKEN4);
-        parented(Registration.GLASSPANE_BROKEN5);
-        parented(Registration.GLASSPANE_BROKENALL);
-        parented(Registration.GLASSPANE_BROKENFRAME);
+        BlockWithItem.getSimpleBlocks().forEach(entry -> parented(entry.getKey()));
+        BlockWithItem.getGlassBlocks().forEach(entry -> parented(entry.getKey()));
+        BlockWithItem.getPaneBlocks().forEach(entry -> generated(entry.getKey(), entry.getValue().texture()));
+        BlockWithItem.getRubbleBlocks().forEach(entry -> parented(entry.getKey()));
     }
 
-    private void parented(BlockWithItem bwi) {
+    private void parented(BlockWithItem<? extends Block> bwi) {
         parented(bwi.getBlock());
     }
 
-    private void parented(RegistryObject<Block> block) {
+    private void parented(RegistryObject<? extends Block> block) {
         getBuilder(block.getId().getPath())
                 .parent(new ModelFile.UncheckedModelFile(modLoc("block/" + block.getId().getPath())));
     }
+
+    private void generated(BlockWithItem<? extends Block> bwi, String texture) {
+        getBuilder(bwi.getBlock().getId().getPath()).parent(getExistingFile(mcLoc("item/generated")))
+                .texture("layer0", new ResourceLocation(texture));
+    }
+
 
     @Override
     public String getName() {

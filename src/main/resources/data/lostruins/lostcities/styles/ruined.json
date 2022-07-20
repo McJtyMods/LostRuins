@@ -32,11 +32,11 @@
     ],
     [
       {
-        "factor": 1.0,
+        "factor": 0.5,
         "palette": "glass_full"
       },
       {
-        "factor": 1.0,
+        "factor": 0.5,
         "palette": "glass_pane"
       },
       {
