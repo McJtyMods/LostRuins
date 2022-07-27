@@ -23,10 +23,14 @@
       },
       {
         "factor": 1.0,
-        "palette": "lostruins:ruined_blackstone"
+        "palette": "lostruins:ruined_stone1"
       },
       {
         "factor": 1.0,
+        "palette": "lostruins:ruined_blackstone"
+      },
+      {
+        "factor": 0.5,
         "palette": "bricks_silver"
       }
     ],

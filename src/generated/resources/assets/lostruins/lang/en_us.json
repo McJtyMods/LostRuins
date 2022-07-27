@@ -37,6 +37,10 @@
   "block.lostruins.glassgray3x2_pane_complete": "Old glass pane",
   "block.lostruins.glassgray3x2_pane_complete_mossy": "Old glass pane",
   "block.lostruins.glassgray3x2_pane_complete_mossy_vines": "Old glass pane",
+  "block.lostruins.stone1": "Stone1",
+  "block.lostruins.stone1_cracked": "Stone 1 (Cracked)",
+  "block.lostruins.stone1_mossy": "Stone 1 (Mossy)",
+  "block.lostruins.stone1_rubble": "Stone1 rubble",
   "block.lostruins.stone_rubble": "Stone rubble",
   "block.lostruins.stonebricks_rubble": "Stone brick rubble",
   "itemGroup.lostruins": "Lost Ruins"

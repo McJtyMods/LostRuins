@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "lostruins:block/stone1/stone1_cracked"
+  }
+}

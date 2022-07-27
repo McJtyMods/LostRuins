@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "lostruins:block/stone1_mossy"
+      },
+      {
+        "model": "lostruins:block/stone1_mossy",
+        "y": 180
+      }
+    ]
+  }
+}

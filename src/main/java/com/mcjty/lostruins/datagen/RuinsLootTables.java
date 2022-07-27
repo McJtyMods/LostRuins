@@ -37,6 +37,7 @@ public class RuinsLootTables extends LootTableProvider {
     public void run(HashCache cache) {
         Map<ResourceLocation, LootTable> tables = new HashMap<>();
         BlockWithItem.getSimpleBlocks().forEach(entry -> addSimpleTable(tables, entry.getKey()));
+        BlockWithItem.getVariantBlocks().forEach(entry -> addSimpleTable(tables, entry.getKey()));
         BlockWithItem.getGlassBlocks().forEach(entry -> addSimpleTable(tables, entry.getKey()));
         BlockWithItem.getPaneBlocks().forEach(entry -> addSimpleTable(tables, entry.getKey()));
         BlockWithItem.getRubbleBlocks().forEach(entry -> addSimpleTable(tables, entry.getKey()));

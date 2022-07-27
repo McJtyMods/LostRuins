@@ -15,6 +15,7 @@ public class RuinsLanguageProvider extends LanguageProvider {
     protected void addTranslations() {
         add("itemGroup.lostruins", "Lost Ruins");
         BlockWithItem.getSimpleBlocks().forEach(entry -> add(entry.getKey().getBlock().get(), entry.getValue().translation()));
+        BlockWithItem.getVariantBlocks().forEach(entry -> add(entry.getKey().getBlock().get(), entry.getValue().translation()));
         BlockWithItem.getGlassBlocks().forEach(entry -> add(entry.getKey().getBlock().get(), entry.getValue().translation()));
         BlockWithItem.getPaneBlocks().forEach(entry -> add(entry.getKey().getBlock().get(), entry.getValue().translation()));
         BlockWithItem.getRubbleBlocks().forEach(entry -> add(entry.getKey().getBlock().get(), entry.getValue().translation()));

@@ -1,8 +1,8 @@
 {
   "parent": "minecraft:block/cube",
   "textures": {
-    "txt": "minecraft:block/stone",
-    "particle": "minecraft:block/stone"
+    "txt": "lostruins:block/stone1/stone1",
+    "particle": "lostruins:block/stone1/stone1"
   },
   "elements": [
     {

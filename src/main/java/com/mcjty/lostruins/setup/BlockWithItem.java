@@ -21,10 +21,12 @@ public class BlockWithItem<T extends Block> {
     private final RegistryObject<T> block;
 
     public static record BlockInfo(String texture, String translation) {}
+    public static record BlockInfoMulti(String[] textures, String translation) {}
 
     private static final Map<BlockWithItem<?>, BlockInfo> GLASS_BLOCKS = new HashMap<>();
     private static final Map<BlockWithItem<IronBarsBlock>, BlockInfo> PANE_BLOCKS = new HashMap<>();
     private static final Map<BlockWithItem<?>, BlockInfo> SIMPLE_BLOCKS = new HashMap<>();
+    private static final Map<BlockWithItem<?>, BlockInfoMulti> VARIANT_BLOCKS = new HashMap<>();
     private static final Map<BlockWithItem<RubbleBlock>, BlockInfo> RUBBLE_BLOCKS = new HashMap<>();
 
     private BlockWithItem(String name, Supplier<T> supplier) {
@@ -36,13 +38,19 @@ public class BlockWithItem<T extends Block> {
         return block;
     }
 
-    public static BlockWithItem<Block> simple(String name, String texture, String translation) {
+    public static BlockWithItem<Block> variant(String name, String translation, String... textures) {
+        BlockWithItem<Block> bi = create(name);
+        VARIANT_BLOCKS.put(bi, new BlockInfoMulti(textures, translation));
+        return bi;
+    }
+
+    public static BlockWithItem<Block> simple(String name, String translation, String texture) {
         BlockWithItem<Block> bi = create(name);
         SIMPLE_BLOCKS.put(bi, new BlockInfo(texture, translation));
         return bi;
     }
 
-    public static BlockWithItem<VariantGlassBlock> glass(String name, String texture, String translation) {
+    public static BlockWithItem<VariantGlassBlock> glass(String name, String translation, String texture) {
         return glass(name, texture, translation, () -> new VariantGlassBlock(Registration.createGlassProperties()));
     }
 
@@ -52,7 +60,7 @@ public class BlockWithItem<T extends Block> {
         return bi;
     }
 
-    public static BlockWithItem<IronBarsBlock> pane(String name, String texture, String translation) {
+    public static BlockWithItem<IronBarsBlock> pane(String name, String translation, String texture) {
         return pane(name, texture, translation, () -> new IronBarsBlock(Registration.createGlassProperties()));
     }
 
@@ -66,7 +74,7 @@ public class BlockWithItem<T extends Block> {
         return new BlockWithItem<T>(name, supplier);
     }
 
-    public static BlockWithItem<RubbleBlock> rubble(String name, String texture, String translation) {
+    public static BlockWithItem<RubbleBlock> rubble(String name, String translation, String texture) {
         BlockWithItem<RubbleBlock> bi = BlockWithItem.create(name, RubbleBlock::new);
         RUBBLE_BLOCKS.put(bi, new BlockInfo(texture, translation));
         return bi;
@@ -86,6 +94,10 @@ public class BlockWithItem<T extends Block> {
 
     public static Stream<Map.Entry<BlockWithItem<?>, BlockInfo>> getSimpleBlocks() {
         return SIMPLE_BLOCKS.entrySet().stream();
+    }
+
+    public static Stream<Map.Entry<BlockWithItem<?>, BlockInfoMulti>> getVariantBlocks() {
+        return VARIANT_BLOCKS.entrySet().stream();
     }
 
     public static Stream<Map.Entry<BlockWithItem<RubbleBlock>, BlockInfo>> getRubbleBlocks() {

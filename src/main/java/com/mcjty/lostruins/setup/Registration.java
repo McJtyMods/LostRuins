@@ -35,15 +35,20 @@ public class Registration {
     }
 
     static {
-        simple("bricks1a", lrTxt("bricks1/bricks1a"), "Bricks 1");
-        simple("bricks1b", lrTxt("bricks1/bricks1b"), "Bricks 1");
-        simple("bricks1c", lrTxt("bricks1/bricks1c"), "Bricks 1");
+        simple("bricks1a", "Bricks 1", lrTxt("bricks1/bricks1a"));
+        simple("bricks1b", "Bricks 1", lrTxt("bricks1/bricks1b"));
+        simple("bricks1c", "Bricks 1", lrTxt("bricks1/bricks1c"));
 
-        rubble("bricks1_rubble", lrTxt("bricks1/bricks1a"), "Brick rubble");
-        rubble("stone_rubble", mcTxt("stone"), "Stone rubble");
-        rubble("stonebricks_rubble", mcTxt("stone_bricks"), "Stone brick rubble");
-        rubble("blackstone_rubble", mcTxt("blackstone"), "Blackstone rubble");
-        rubble("blackstonebricks_rubble", mcTxt("polished_blackstone_bricks"), "Blackstone brick rubble");
+        variant("stone1", "Stone1", lrTxt("stone1/stone1"), lrTxt("stone1/stone1_mirrored"), lrTxt("stone1/stone1_rotated"));
+        variant("stone1_cracked", "Stone 1 (Cracked)", lrTxt("stone1/stone1_cracked"), lrTxt("stone1/stone1_cracked2"));
+        variant("stone1_mossy", "Stone 1 (Mossy)", lrTxt("stone1/stone1_mossy"));
+
+        rubble("bricks1_rubble", "Brick rubble", lrTxt("bricks1/bricks1a"));
+        rubble("stone_rubble", "Stone rubble", mcTxt("stone"));
+        rubble("stone1_rubble", "Stone1 rubble", lrTxt("stone1/stone1"));
+        rubble("stonebricks_rubble", "Stone brick rubble", mcTxt("stone_bricks"));
+        rubble("blackstone_rubble", "Blackstone rubble", mcTxt("blackstone"));
+        rubble("blackstonebricks_rubble", "Blackstone brick rubble", mcTxt("polished_blackstone_bricks"));
 
         for (String s : Lists.newArrayList(
                 "complete", "complete_mossy", "complete_mossy_vines",
@@ -52,8 +57,8 @@ public class Registration {
                 "broken_frame", "broken_frame_mossy", "broken_frame_vines", "broken_frame_mossy_vines",
                 "broken_mossy", "broken_mossy_vines"
                 )) {
-            glass("glassgray3x2_" + s, lrTxt("glassgray3x2/" + s), "Old glass");
-            pane("glassgray3x2_pane_" + s, lrTxt("glassgray3x2/" + s), "Old glass pane");
+            glass("glassgray3x2_" + s, "Old glass", lrTxt("glassgray3x2/" + s));
+            pane("glassgray3x2_pane_" + s, "Old glass pane", lrTxt("glassgray3x2/" + s));
         }
     }
 

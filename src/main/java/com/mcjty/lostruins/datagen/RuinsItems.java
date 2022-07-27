@@ -19,6 +19,7 @@ public class RuinsItems extends ItemModelProvider {
     @Override
     protected void registerModels() {
         BlockWithItem.getSimpleBlocks().forEach(entry -> parented(entry.getKey()));
+        BlockWithItem.getVariantBlocks().forEach(entry -> parented(entry.getKey()));
         BlockWithItem.getGlassBlocks().forEach(entry -> parented(entry.getKey()));
         BlockWithItem.getPaneBlocks().forEach(entry -> generated(entry.getKey(), entry.getValue().texture()));
         BlockWithItem.getRubbleBlocks().forEach(entry -> parented(entry.getKey()));

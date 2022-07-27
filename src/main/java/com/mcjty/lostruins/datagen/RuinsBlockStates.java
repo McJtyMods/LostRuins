@@ -22,6 +22,7 @@ public class RuinsBlockStates extends BlockStateProvider {
     @Override
     protected void registerStatesAndModels() {
         BlockWithItem.getSimpleBlocks().forEach(entry -> simple(entry.getKey(), entry.getValue().texture()));
+        BlockWithItem.getVariantBlocks().forEach(entry -> variant(entry.getKey(), entry.getValue().textures()));
         BlockWithItem.getGlassBlocks().forEach(entry -> simple(entry.getKey(), entry.getValue().texture()));
         BlockWithItem.getPaneBlocks().forEach(entry -> {
             ResourceLocation txt = new ResourceLocation(entry.getValue().texture());
@@ -38,6 +39,22 @@ public class RuinsBlockStates extends BlockStateProvider {
         T block = bwi.getBlock().get();
         ResourceLocation txt = new ResourceLocation(texture);
         simpleBlock(block, models().cubeAll(block.getRegistryName().getPath(), txt));
+    }
+
+    private <T extends Block> void variant(BlockWithItem<T> bwi, String... textures) {
+        T block = bwi.getBlock().get();
+        VariantBlockStateBuilder bld = getVariantBuilder(block);
+
+        int idx = 0;
+        for (String texture : textures) {
+            ResourceLocation txt = new ResourceLocation(texture);
+            BlockModelBuilder model = models().cubeAll(block.getRegistryName().getPath() + (idx == 0 ? "" : idx), txt);
+            idx++;
+
+            bld.partialState().addModels(
+                    new ConfiguredModel(model),
+                    new ConfiguredModel(model, 0, 180, false));
+        }
     }
 
     private <T extends Block> void simple(RegistryObject<T> block) {
@@ -58,7 +75,7 @@ public class RuinsBlockStates extends BlockStateProvider {
         frame1.texture("txt", txt);
         frame1.texture("particle", txt);
 
-        BlockModelBuilder frame2 = models().getBuilder("block/" + block.getId().getPath());
+        BlockModelBuilder frame2 = models().getBuilder("block/" + block.getId().getPath()+"1");
         frame2.parent(models().getExistingFile(mcLoc("cube")));
         cube(frame2, 7f, 0f, 2f, 13f, 6f, 7f);
         cube(frame2, 1f, 0f, 11f, 3f, 3f, 13f);
