@@ -17,6 +17,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Arrays;
+import java.util.List;
 import java.util.stream.Collectors;
 
 import static com.mcjty.lostruins.LostRuins.MODID;
@@ -59,10 +60,9 @@ public class Registration {
                 SuffixWithTextures.create("broken", " (broken)", "broken1", "broken2", "broken3", "broken4", "broken5", "broken_all", "broken_frame"),
                 SuffixWithTextures.create("broken_mossy", " (broken, mossy)", "broken_frame_mossy", "broken_mossy"),
                 SuffixWithTextures.create("vines", " (vines)", "broken_frame_vines", "broken_frame_mossy_vines","broken_mossy_vines"))) {
-            glass("glassgray3x2_" + s.suffix(), "Old glass" + s.languageSuffix(),
-                    Arrays.stream(s.textures()).map(t -> lrTxt("glassgray3x2/" + t)).collect(Collectors.toList()));
-            pane("glassgray3x2_pane_" + s.suffix(), "Old glass pane" + s.languageSuffix(),
-                    Arrays.stream(s.textures()).map(t -> lrTxt("glassgray3x2/" + t)).collect(Collectors.toList()));
+            List<String> txt = Arrays.stream(s.textures()).map(t -> lrTxt("glassgray3x2/" + t)).collect(Collectors.toList());
+            glass("glassgray3x2_" + s.suffix(), "Old glass" + s.languageSuffix(), txt);
+            pane("glassgray3x2_pane_" + s.suffix(), "Old glass pane" + s.languageSuffix(), txt);
         }
     }
 
