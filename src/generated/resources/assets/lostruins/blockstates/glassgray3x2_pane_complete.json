@@ -2,7 +2,7 @@
   "multipart": [
     {
       "apply": {
-        "model": "lostruins:block/glassgray3x2_pane_complete_post"
+        "model": "lostruins:block/glassgray3x2_pane_complete_post_complete"
       }
     },
     {
@@ -10,7 +10,7 @@
         "north": "true"
       },
       "apply": {
-        "model": "lostruins:block/glassgray3x2_pane_complete_side"
+        "model": "lostruins:block/glassgray3x2_pane_complete_side_complete"
       }
     },
     {
@@ -18,7 +18,7 @@
         "north": "false"
       },
       "apply": {
-        "model": "lostruins:block/glassgray3x2_pane_complete_noside"
+        "model": "lostruins:block/glassgray3x2_pane_complete_noside_complete"
       }
     },
     {
@@ -26,7 +26,7 @@
         "south": "true"
       },
       "apply": {
-        "model": "lostruins:block/glassgray3x2_pane_complete_side_alt"
+        "model": "lostruins:block/glassgray3x2_pane_complete_side_alt_complete"
       }
     },
     {
@@ -34,7 +34,7 @@
         "south": "false"
       },
       "apply": {
-        "model": "lostruins:block/glassgray3x2_pane_complete_noside_alt",
+        "model": "lostruins:block/glassgray3x2_pane_complete_noside_alt_complete",
         "y": 90
       }
     },
@@ -43,7 +43,7 @@
         "west": "true"
       },
       "apply": {
-        "model": "lostruins:block/glassgray3x2_pane_complete_side_alt",
+        "model": "lostruins:block/glassgray3x2_pane_complete_side_alt_complete",
         "y": 90
       }
     },
@@ -52,7 +52,7 @@
         "west": "false"
       },
       "apply": {
-        "model": "lostruins:block/glassgray3x2_pane_complete_noside",
+        "model": "lostruins:block/glassgray3x2_pane_complete_noside_complete",
         "y": 270
       }
     },
@@ -61,7 +61,7 @@
         "east": "true"
       },
       "apply": {
-        "model": "lostruins:block/glassgray3x2_pane_complete_side",
+        "model": "lostruins:block/glassgray3x2_pane_complete_side_complete",
         "y": 90
       }
     },
@@ -70,7 +70,7 @@
         "east": "false"
       },
       "apply": {
-        "model": "lostruins:block/glassgray3x2_pane_complete_noside_alt"
+        "model": "lostruins:block/glassgray3x2_pane_complete_noside_alt_complete"
       }
     }
   ]

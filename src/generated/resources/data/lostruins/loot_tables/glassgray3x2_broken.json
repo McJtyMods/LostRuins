@@ -1,0 +1,15 @@
+{
+  "pools": [
+    {
+      "name": "glassgray3x2_broken",
+      "rolls": 1.0,
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "lostruins:glassgray3x2_broken"
+        }
+      ]
+    }
+  ]
+}

@@ -16,6 +16,9 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.Arrays;
+import java.util.stream.Collectors;
+
 import static com.mcjty.lostruins.LostRuins.MODID;
 import static com.mcjty.lostruins.setup.BlockWithItem.*;
 
@@ -50,15 +53,22 @@ public class Registration {
         rubble("blackstone_rubble", "Blackstone rubble", mcTxt("blackstone"));
         rubble("blackstonebricks_rubble", "Blackstone brick rubble", mcTxt("polished_blackstone_bricks"));
 
-        for (String s : Lists.newArrayList(
-                "complete", "complete_mossy", "complete_mossy_vines",
-                "broken1", "broken2", "broken3", "broken4", "broken5",
-                "broken_all", "broken_all_mossy",
-                "broken_frame", "broken_frame_mossy", "broken_frame_vines", "broken_frame_mossy_vines",
-                "broken_mossy", "broken_mossy_vines"
-                )) {
-            glass("glassgray3x2_" + s, "Old glass", lrTxt("glassgray3x2/" + s));
-            pane("glassgray3x2_pane_" + s, "Old glass pane", lrTxt("glassgray3x2/" + s));
+        for (SuffixWithTextures s : Lists.newArrayList(
+                SuffixWithTextures.create("complete", "", "complete"),
+                SuffixWithTextures.create("mossy", " (mossy)", "complete_mossy", "complete_mossy_vines", "broken_all_mossy"),
+                SuffixWithTextures.create("broken", " (broken)", "broken1", "broken2", "broken3", "broken4", "broken5", "broken_all", "broken_frame"),
+                SuffixWithTextures.create("broken_mossy", " (broken, mossy)", "broken_frame_mossy", "broken_mossy"),
+                SuffixWithTextures.create("vines", " (vines)", "broken_frame_vines", "broken_frame_mossy_vines","broken_mossy_vines"))) {
+            glass("glassgray3x2_" + s.suffix(), "Old glass" + s.languageSuffix(),
+                    Arrays.stream(s.textures()).map(t -> lrTxt("glassgray3x2/" + t)).collect(Collectors.toList()));
+            pane("glassgray3x2_pane_" + s.suffix(), "Old glass pane" + s.languageSuffix(),
+                    Arrays.stream(s.textures()).map(t -> lrTxt("glassgray3x2/" + t)).collect(Collectors.toList()));
+        }
+    }
+
+    private static record SuffixWithTextures(String suffix, String languageSuffix, String... textures) {
+        public static SuffixWithTextures create(String suffix, String languageSuffix, String... textures) {
+            return new SuffixWithTextures(suffix, languageSuffix, textures);
         }
     }
 

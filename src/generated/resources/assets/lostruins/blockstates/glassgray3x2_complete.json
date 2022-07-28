@@ -1,7 +1,13 @@
 {
   "variants": {
-    "": {
-      "model": "lostruins:block/glassgray3x2_complete"
-    }
+    "": [
+      {
+        "model": "lostruins:block/glassgray3x2_complete"
+      },
+      {
+        "model": "lostruins:block/glassgray3x2_complete",
+        "y": 180
+      }
+    ]
   }
 }

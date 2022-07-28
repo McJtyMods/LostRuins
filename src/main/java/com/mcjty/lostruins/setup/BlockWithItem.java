@@ -11,6 +11,7 @@ import net.minecraft.world.level.material.Material;
 import net.minecraftforge.registries.RegistryObject;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.function.Supplier;
 import java.util.stream.Stream;
@@ -20,11 +21,11 @@ import static com.mcjty.lostruins.setup.Registration.createStandardProperties;
 public class BlockWithItem<T extends Block> {
     private final RegistryObject<T> block;
 
-    public static record BlockInfo(String texture, String translation) {}
-    public static record BlockInfoMulti(String[] textures, String translation) {}
+    public static record BlockInfo(String translation, String texture) {}
+    public static record BlockInfoMulti(String translation, List<String> textures) {}
 
-    private static final Map<BlockWithItem<?>, BlockInfo> GLASS_BLOCKS = new HashMap<>();
-    private static final Map<BlockWithItem<IronBarsBlock>, BlockInfo> PANE_BLOCKS = new HashMap<>();
+    private static final Map<BlockWithItem<?>, BlockInfoMulti> GLASS_BLOCKS = new HashMap<>();
+    private static final Map<BlockWithItem<IronBarsBlock>, BlockInfoMulti> PANE_BLOCKS = new HashMap<>();
     private static final Map<BlockWithItem<?>, BlockInfo> SIMPLE_BLOCKS = new HashMap<>();
     private static final Map<BlockWithItem<?>, BlockInfoMulti> VARIANT_BLOCKS = new HashMap<>();
     private static final Map<BlockWithItem<RubbleBlock>, BlockInfo> RUBBLE_BLOCKS = new HashMap<>();
@@ -40,33 +41,33 @@ public class BlockWithItem<T extends Block> {
 
     public static BlockWithItem<Block> variant(String name, String translation, String... textures) {
         BlockWithItem<Block> bi = create(name);
-        VARIANT_BLOCKS.put(bi, new BlockInfoMulti(textures, translation));
+        VARIANT_BLOCKS.put(bi, new BlockInfoMulti(translation, List.of(textures)));
         return bi;
     }
 
     public static BlockWithItem<Block> simple(String name, String translation, String texture) {
         BlockWithItem<Block> bi = create(name);
-        SIMPLE_BLOCKS.put(bi, new BlockInfo(texture, translation));
+        SIMPLE_BLOCKS.put(bi, new BlockInfo(translation, texture));
         return bi;
     }
 
-    public static BlockWithItem<VariantGlassBlock> glass(String name, String translation, String texture) {
-        return glass(name, texture, translation, () -> new VariantGlassBlock(Registration.createGlassProperties()));
+    public static BlockWithItem<VariantGlassBlock> glass(String name, String translation, List<String> textures) {
+        return glass(name, translation, () -> new VariantGlassBlock(Registration.createGlassProperties()), textures);
     }
 
-    public static <T extends Block> BlockWithItem<T> glass(String name, String texture, String translation, Supplier<T> supplier) {
+    public static <T extends Block> BlockWithItem<T> glass(String name, String translation, Supplier<T> supplier, List<String> textures) {
         BlockWithItem<T> bi = new BlockWithItem<>(name, supplier);
-        GLASS_BLOCKS.put(bi, new BlockInfo(texture, translation));
+        GLASS_BLOCKS.put(bi, new BlockInfoMulti(translation, textures));
         return bi;
     }
 
-    public static BlockWithItem<IronBarsBlock> pane(String name, String translation, String texture) {
-        return pane(name, texture, translation, () -> new IronBarsBlock(Registration.createGlassProperties()));
+    public static BlockWithItem<IronBarsBlock> pane(String name, String translation, List<String> textures) {
+        return pane(name, translation, () -> new IronBarsBlock(Registration.createGlassProperties()), textures);
     }
 
-    public static BlockWithItem<IronBarsBlock> pane(String name, String texture, String translation, Supplier<IronBarsBlock> supplier) {
+    public static BlockWithItem<IronBarsBlock> pane(String name, String translation, Supplier<IronBarsBlock> supplier, List<String> textures) {
         BlockWithItem<IronBarsBlock> bi = new BlockWithItem<>(name, supplier);
-        PANE_BLOCKS.put(bi, new BlockInfo(texture, translation));
+        PANE_BLOCKS.put(bi, new BlockInfoMulti(translation, textures));
         return bi;
     }
 
@@ -76,7 +77,7 @@ public class BlockWithItem<T extends Block> {
 
     public static BlockWithItem<RubbleBlock> rubble(String name, String translation, String texture) {
         BlockWithItem<RubbleBlock> bi = BlockWithItem.create(name, RubbleBlock::new);
-        RUBBLE_BLOCKS.put(bi, new BlockInfo(texture, translation));
+        RUBBLE_BLOCKS.put(bi, new BlockInfo(translation, texture));
         return bi;
     }
 
@@ -84,11 +85,11 @@ public class BlockWithItem<T extends Block> {
         return create(name, () -> new Block(BlockBehaviour.Properties.of(Material.STONE)));
     }
 
-    public static Stream<Map.Entry<BlockWithItem<?>, BlockInfo>> getGlassBlocks() {
+    public static Stream<Map.Entry<BlockWithItem<?>, BlockInfoMulti>> getGlassBlocks() {
         return GLASS_BLOCKS.entrySet().stream();
     }
 
-    public static Stream<Map.Entry<BlockWithItem<IronBarsBlock>, BlockInfo>> getPaneBlocks() {
+    public static Stream<Map.Entry<BlockWithItem<IronBarsBlock>, BlockInfoMulti>> getPaneBlocks() {
         return PANE_BLOCKS.entrySet().stream();
     }
 

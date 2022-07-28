@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "lostruins:block/glassgray3x2/broken_frame_mossy"
-  }
-}
