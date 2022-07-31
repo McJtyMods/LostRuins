@@ -27,6 +27,10 @@
       },
       {
         "factor": 1.0,
+        "palette": "lostruins:ruined_concrete1"
+      },
+      {
+        "factor": 1.0,
         "palette": "lostruins:ruined_blackstone"
       },
       {

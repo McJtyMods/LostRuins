@@ -1,0 +1,105 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "txt": "lostruins:block/concrete1/concretebricks1a",
+    "particle": "lostruins:block/concrete1/concretebricks1a"
+  },
+  "elements": [
+    {
+      "from": [
+        7,
+        0,
+        2
+      ],
+      "to": [
+        13,
+        6,
+        7
+      ],
+      "faces": {
+        "down": {
+          "texture": "#txt"
+        },
+        "up": {
+          "texture": "#txt"
+        },
+        "north": {
+          "texture": "#txt"
+        },
+        "south": {
+          "texture": "#txt"
+        },
+        "west": {
+          "texture": "#txt"
+        },
+        "east": {
+          "texture": "#txt"
+        }
+      }
+    },
+    {
+      "from": [
+        1,
+        0,
+        11
+      ],
+      "to": [
+        3,
+        3,
+        13
+      ],
+      "faces": {
+        "down": {
+          "texture": "#txt"
+        },
+        "up": {
+          "texture": "#txt"
+        },
+        "north": {
+          "texture": "#txt"
+        },
+        "south": {
+          "texture": "#txt"
+        },
+        "west": {
+          "texture": "#txt"
+        },
+        "east": {
+          "texture": "#txt"
+        }
+      }
+    },
+    {
+      "from": [
+        4,
+        0,
+        6
+      ],
+      "to": [
+        9,
+        5,
+        9
+      ],
+      "faces": {
+        "down": {
+          "texture": "#txt"
+        },
+        "up": {
+          "texture": "#txt"
+        },
+        "north": {
+          "texture": "#txt"
+        },
+        "south": {
+          "texture": "#txt"
+        },
+        "west": {
+          "texture": "#txt"
+        },
+        "east": {
+          "texture": "#txt"
+        }
+      }
+    }
+  ]
+}

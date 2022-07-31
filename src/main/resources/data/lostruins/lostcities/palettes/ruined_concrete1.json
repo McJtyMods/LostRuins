@@ -1,0 +1,46 @@
+{
+  "palette": [
+    {
+      "char": "X",
+      "block": "minecraft:infested_stone_bricks",
+      "damaged": "minecraft:iron_bars"
+    },
+    {
+      "char": "$",
+      "block": "minecraft:smooth_stone_slab[type=double]",
+      "damaged": "minecraft:iron_bars"
+    },
+    {
+      "char": "#",
+      "blocks": [
+        {
+          "random": 32,
+          "block": "lostruins:concretebricks1"
+        },
+        {
+          "random": 2000,
+          "block": "lostruins:concrete1"
+        }
+      ],
+      "damaged": "minecraft:iron_bars"
+    },
+    {
+      "char": "}",
+      "blocks": [
+        {
+          "random": 50,
+          "block": "lostruins:concrete1_rubble"
+        },
+        {
+          "random": 10,
+          "block": "lostruins:concretebricks1"
+        },
+        {
+          "random": 2000,
+          "block": "lostruins:concrete1"
+        }
+      ],
+      "damaged": "minecraft:iron_bars"
+    }
+  ]
+}
