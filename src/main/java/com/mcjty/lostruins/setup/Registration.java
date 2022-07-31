@@ -44,7 +44,8 @@ public class Registration {
         simple("bricks1c", "Bricks 1", lrTxt("bricks1/bricks1c"));
 
         variant("concrete1", "Concrete 1", lrTxt("concrete1/concrete1a"), lrTxt("concrete1/concrete1b"), lrTxt("concrete1/concrete1c"));
-        variant("concretebricks1", "Concrete Bricks 1", lrTxt("concrete1/concretebricks1a"), lrTxt("concrete1/concretebricks1b"), lrTxt("concrete1/concretebricks1c"));
+        variant("concrete1_bricks", "Concrete 1 Bricks", lrTxt("concrete1/concrete1a_bricks"), lrTxt("concrete1/concrete1a_bricks"), lrTxt("concrete1/concrete1a_bricks"));
+        variant("concrete1_mossy", "Concrete 1 Mossy", lrTxt("concrete1/concrete1a_mossy"), lrTxt("concrete1/concrete1b_mossy"), lrTxt("concrete1/concrete1c_mossy"));
         variant("stone1", "Stone 1", lrTxt("stone1/stone1"), lrTxt("stone1/stone1_mirrored"), lrTxt("stone1/stone1_rotated"));
         variant("stone1_cracked", "Stone 1 (Cracked)", lrTxt("stone1/stone1_cracked"), lrTxt("stone1/stone1_cracked2"));
         variant("stone1_mossy", "Stone 1 (Mossy)", lrTxt("stone1/stone1_mossy"));
@@ -52,7 +53,7 @@ public class Registration {
         rubble("bricks1_rubble", "Brick rubble", lrTxt("bricks1/bricks1a"));
         rubble("stone_rubble", "Stone rubble", mcTxt("stone"));
         rubble("stone1_rubble", "Stone 1 rubble", lrTxt("stone1/stone1"));
-        rubble("concrete1_rubble", "Concrete 1 rubble", lrTxt("concrete1/concretebricks1a"));
+        rubble("concrete1_rubble", "Concrete 1 rubble", lrTxt("concrete1/concrete1a_bricks"));
         rubble("stonebricks_rubble", "Stone brick rubble", mcTxt("stone_bricks"));
         rubble("blackstone_rubble", "Blackstone rubble", mcTxt("blackstone"));
         rubble("blackstonebricks_rubble", "Blackstone brick rubble", mcTxt("polished_blackstone_bricks"));

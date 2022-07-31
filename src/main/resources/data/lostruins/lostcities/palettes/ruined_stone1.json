@@ -32,7 +32,7 @@
       "char": "}",
       "blocks": [
         {
-          "random": 50,
+          "random": 60,
           "block": "lostruins:stone1_rubble"
         },
         {

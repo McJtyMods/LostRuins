@@ -1,13 +1,13 @@
 {
   "pools": [
     {
-      "name": "concretebricks1",
+      "name": "concrete1_mossy",
       "rolls": 1.0,
       "bonus_rolls": 0.0,
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "lostruins:concretebricks1"
+          "name": "lostruins:concrete1_mossy"
         }
       ]
     }

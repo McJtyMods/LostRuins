@@ -15,7 +15,11 @@
       "blocks": [
         {
           "random": 32,
-          "block": "lostruins:concretebricks1"
+          "block": "lostruins:concrete1_bricks"
+        },
+        {
+          "random": 3,
+          "block": "lostruins:concrete1_mossy"
         },
         {
           "random": 2000,
@@ -28,12 +32,16 @@
       "char": "}",
       "blocks": [
         {
-          "random": 50,
+          "random": 70,
           "block": "lostruins:concrete1_rubble"
         },
         {
           "random": 10,
-          "block": "lostruins:concretebricks1"
+          "block": "lostruins:concrete1_bricks"
+        },
+        {
+          "random": 10,
+          "block": "lostruins:concrete1_mossy"
         },
         {
           "random": 2000,

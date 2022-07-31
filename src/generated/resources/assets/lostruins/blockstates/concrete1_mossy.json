@@ -1,0 +1,27 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "lostruins:block/concrete1_mossy"
+      },
+      {
+        "model": "lostruins:block/concrete1_mossy",
+        "y": 180
+      },
+      {
+        "model": "lostruins:block/concrete1_mossy1"
+      },
+      {
+        "model": "lostruins:block/concrete1_mossy1",
+        "y": 180
+      },
+      {
+        "model": "lostruins:block/concrete1_mossy2"
+      },
+      {
+        "model": "lostruins:block/concrete1_mossy2",
+        "y": 180
+      }
+    ]
+  }
+}
