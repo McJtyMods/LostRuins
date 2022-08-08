@@ -7,7 +7,16 @@
     },
     {
       "char": "R",
-      "block": "minecraft:cyan_terracotta",
+      "blocks": [
+        {
+          "random": 8,
+          "block": "lostruins:road1_cracked"
+        },
+        {
+          "random": 2000,
+          "block": "lostruins:road1"
+        }
+      ],
       "damaged": "minecraft:iron_bars"
     },
     {

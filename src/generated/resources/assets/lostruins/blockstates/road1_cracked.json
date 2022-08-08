@@ -1,0 +1,20 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "lostruins:block/road1_cracked"
+      },
+      {
+        "model": "lostruins:block/road1_cracked",
+        "y": 180
+      },
+      {
+        "model": "lostruins:block/road1_cracked1"
+      },
+      {
+        "model": "lostruins:block/road1_cracked1",
+        "y": 180
+      }
+    ]
+  }
+}

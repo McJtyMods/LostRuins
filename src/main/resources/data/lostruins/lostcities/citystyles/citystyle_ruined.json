@@ -1,4 +1,11 @@
 {
   "style": "lostruins:ruined",
-  "inherit": "citystyle_common"
+  "inherit": "citystyle_common",
+  "streetblocks": {
+    "border": "y",
+    "wall": "w",
+    "street": "R",
+    "streetbase": "b",
+    "streetvariant": "B"
+  }
 }

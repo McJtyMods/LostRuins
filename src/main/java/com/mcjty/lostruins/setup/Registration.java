@@ -50,6 +50,9 @@ public class Registration {
         variant("stone1_cracked", "Stone 1 (Cracked)", lrTxt("stone1/stone1_cracked"), lrTxt("stone1/stone1_cracked2"));
         variant("stone1_mossy", "Stone 1 (Mossy)", lrTxt("stone1/stone1_mossy"));
 
+        variant("road1", "Road 1", lrTxt("road1/road1a"), lrTxt("road1/road1b"));
+        variant("road1_cracked", "Road 1 (Cracked)", lrTxt("road1/road1a_cracked"), lrTxt("road1/road1b_cracked"));
+
         rubble("bricks1_rubble", "Brick rubble", lrTxt("bricks1/bricks1a"));
         rubble("stone_rubble", "Stone rubble", mcTxt("stone"));
         rubble("stone1_rubble", "Stone 1 rubble", lrTxt("stone1/stone1"));
