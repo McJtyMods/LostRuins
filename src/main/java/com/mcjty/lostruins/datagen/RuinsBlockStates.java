@@ -11,6 +11,7 @@ import net.minecraft.world.level.block.IronBarsBlock;
 import net.minecraft.world.level.block.PipeBlock;
 import net.minecraftforge.client.model.generators.*;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
 import java.util.ArrayList;
@@ -33,7 +34,7 @@ public class RuinsBlockStates extends BlockStateProvider {
     }
 
     public void pane(IronBarsBlock block, List<String> textures) {
-        String baseName = block.getRegistryName().toString();
+        String baseName = ForgeRegistries.BLOCKS.getKey(block).toString();
         MultiPartBlockStateBuilder builder = getMultipartBuilder(block);
         List<ModelFile> post = new ArrayList<>();
         List<ModelFile> side = new ArrayList<>();
@@ -99,7 +100,7 @@ public class RuinsBlockStates extends BlockStateProvider {
     private <T extends Block> void simple(BlockWithItem<T> bwi, String texture) {
         T block = bwi.getBlock().get();
         ResourceLocation txt = new ResourceLocation(texture);
-        simpleBlock(block, models().cubeAll(block.getRegistryName().getPath(), txt));
+        simpleBlock(block, models().cubeAll(ForgeRegistries.BLOCKS.getKey(block).getPath(), txt));
     }
 
     private <T extends Block> void variant(BlockWithItem<T> bwi, List<String> textures) {
@@ -109,7 +110,7 @@ public class RuinsBlockStates extends BlockStateProvider {
         int idx = 0;
         for (String texture : textures) {
             ResourceLocation txt = new ResourceLocation(texture);
-            BlockModelBuilder model = models().cubeAll(block.getRegistryName().getPath() + (idx == 0 ? "" : idx), txt);
+            BlockModelBuilder model = models().cubeAll(ForgeRegistries.BLOCKS.getKey(block).getPath() + (idx == 0 ? "" : idx), txt);
             idx++;
 
             bld.partialState().addModels(

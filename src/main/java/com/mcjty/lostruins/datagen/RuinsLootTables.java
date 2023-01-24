@@ -4,10 +4,9 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.mcjty.lostruins.LostRuins;
 import com.mcjty.lostruins.setup.BlockWithItem;
-import com.mcjty.lostruins.setup.Registration;
+import net.minecraft.data.CachedOutput;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.DataProvider;
-import net.minecraft.data.HashCache;
 import net.minecraft.data.loot.LootTableProvider;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
@@ -16,6 +15,7 @@ import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.LootTables;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
+import net.minecraftforge.registries.ForgeRegistries;
 
 import java.io.IOException;
 import java.nio.file.Path;
@@ -34,7 +34,7 @@ public class RuinsLootTables extends LootTableProvider {
     }
 
     @Override
-    public void run(HashCache cache) {
+    public void run(CachedOutput cache) {
         Map<ResourceLocation, LootTable> tables = new HashMap<>();
         BlockWithItem.getSimpleBlocks().forEach(entry -> addSimpleTable(tables, entry.getKey()));
         BlockWithItem.getVariantBlocks().forEach(entry -> addSimpleTable(tables, entry.getKey()));
@@ -49,7 +49,7 @@ public class RuinsLootTables extends LootTableProvider {
     }
 
     private void addSimpleTable(Map<ResourceLocation, LootTable> tables, Block block) {
-        tables.put(block.getRegistryName(), createSimpleTable(block.getRegistryName().getPath(), block).build());
+        tables.put(ForgeRegistries.BLOCKS.getKey(block), createSimpleTable(ForgeRegistries.BLOCKS.getKey(block).getPath(), block).build());
     }
 
     private LootTable.Builder createSimpleTable(String name, Block block) {
@@ -61,12 +61,12 @@ public class RuinsLootTables extends LootTableProvider {
     }
 
 
-    private void writeTables(HashCache cache, Map<ResourceLocation, LootTable> tables) {
+    private void writeTables(CachedOutput cache, Map<ResourceLocation, LootTable> tables) {
         Path outputFolder = this.generator.getOutputFolder();
         tables.forEach((key, lootTable) -> {
             Path path = outputFolder.resolve("data/" + key.getNamespace() + "/loot_tables/" + key.getPath() + ".json");
             try {
-                DataProvider.save(GSON, cache, LootTables.serialize(lootTable), path);
+                DataProvider.saveStable(cache, LootTables.serialize(lootTable), path);
             } catch (IOException e) {
                 LostRuins.logger.error("Couldn't write loot table {}", path, (Object) e);
             }
