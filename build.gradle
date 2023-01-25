@@ -32,10 +32,6 @@ group = "com.github.mcjty"
 archivesBaseName = "lostruins"
 java.toolchain.languageVersion = JavaLanguageVersion.of(17)
 
-if (System.getenv('BUILD_NUMBER') != null) {
-    version += "-${System.getenv('BUILD_NUMBER')}"
-}
-
 runs('lostruins')
 jars('lostruins')
 
@@ -48,7 +44,8 @@ dependencies {
     jei()
     top()
     lostcities()
+    mcjtylib()
 }
 
 tasks.curseforge.enabled = project.hasProperty('curseforge_key')
-cfdeps(['the-one-probe'], ['the-lost-cities'], [])
+cfdeps(['the-one-probe'], ['the-lost-cities', 'mcjtylib'], [1.19.3])

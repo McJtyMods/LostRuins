@@ -89,7 +89,7 @@ public class Registration {
 
     @NotNull
     public static Item.Properties createStandardProperties() {
-        return new Item.Properties().tab(LostRuins.setup.getTab());
+        return LostRuins.setup.defaultProperties();
     }
 
     @NotNull

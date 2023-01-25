@@ -1,23 +1,17 @@
 package com.mcjty.lostruins.datagen;
 
-import com.mcjty.lostruins.LostRuins;
 import com.mcjty.lostruins.setup.BlockWithItem;
-import net.minecraft.data.DataGenerator;
-import net.minecraftforge.common.data.LanguageProvider;
+import mcjty.lib.datagen.DataGen;
+import mcjty.lib.datagen.Dob;
 
-public class RuinsLanguageProvider extends LanguageProvider {
+public class RuinsLanguageProvider {
 
-    public RuinsLanguageProvider(DataGenerator gen, String locale) {
-        super(gen, LostRuins.MODID, locale);
-    }
-
-    @Override
-    protected void addTranslations() {
-        add("itemGroup.lostruins", "Lost Ruins");
-        BlockWithItem.getSimpleBlocks().forEach(entry -> add(entry.getKey().getBlock().get(), entry.getValue().translation()));
-        BlockWithItem.getVariantBlocks().forEach(entry -> add(entry.getKey().getBlock().get(), entry.getValue().translation()));
-        BlockWithItem.getGlassBlocks().forEach(entry -> add(entry.getKey().getBlock().get(), entry.getValue().translation()));
-        BlockWithItem.getPaneBlocks().forEach(entry -> add(entry.getKey().getBlock().get(), entry.getValue().translation()));
-        BlockWithItem.getRubbleBlocks().forEach(entry -> add(entry.getKey().getBlock().get(), entry.getValue().translation()));
+    public static void generate(DataGen dataGen) {
+        dataGen.add(Dob.builder().message("itemGroup.lostruins", "Lost Ruins"));
+        BlockWithItem.getSimpleBlocks().forEach(entry -> Dob.blockBuilder(entry.getKey().getBlock()).name(entry.getValue().translation()));
+        BlockWithItem.getVariantBlocks().forEach(entry -> Dob.blockBuilder(entry.getKey().getBlock()).name(entry.getValue().translation()));
+        BlockWithItem.getGlassBlocks().forEach(entry -> Dob.blockBuilder(entry.getKey().getBlock()).name(entry.getValue().translation()));
+        BlockWithItem.getPaneBlocks().forEach(entry -> Dob.blockBuilder(entry.getKey().getBlock()).name(entry.getValue().translation()));
+        BlockWithItem.getRubbleBlocks().forEach(entry -> Dob.blockBuilder(entry.getKey().getBlock()).name(entry.getValue().translation()));
     }
 }

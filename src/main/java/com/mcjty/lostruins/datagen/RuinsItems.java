@@ -1,47 +1,50 @@
 package com.mcjty.lostruins.datagen;
 
-import com.mcjty.lostruins.LostRuins;
 import com.mcjty.lostruins.setup.BlockWithItem;
-import net.minecraft.data.DataGenerator;
+import mcjty.lib.datagen.BaseItemModelProvider;
+import mcjty.lib.datagen.DataGen;
+import mcjty.lib.datagen.Dob;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
-import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.client.model.generators.ModelFile;
-import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.RegistryObject;
 
-public class RuinsItems extends ItemModelProvider {
+public class RuinsItems {
 
-    public RuinsItems(DataGenerator generator, ExistingFileHelper existingFileHelper) {
-        super(generator, LostRuins.MODID, existingFileHelper);
+    public static void generate(DataGen dataGen) {
+        BlockWithItem.getSimpleBlocks().forEach(entry -> {
+            dataGen.add(Dob.blockBuilder(entry.getKey().getBlock())
+                            .itemModel(p -> parented(p, entry.getKey().getBlock())));
+        });
+        BlockWithItem.getVariantBlocks().forEach(entry -> {
+            dataGen.add(Dob.blockBuilder(entry.getKey().getBlock())
+                    .itemModel(p -> parented(p, entry.getKey().getBlock())));
+        });
+        BlockWithItem.getGlassBlocks().forEach(entry -> {
+            dataGen.add(Dob.blockBuilder(entry.getKey().getBlock())
+                    .itemModel(p -> parented(p, entry.getKey().getBlock())));
+        });
+        BlockWithItem.getPaneBlocks().forEach(entry -> {
+            dataGen.add(Dob.blockBuilder(entry.getKey().getBlock())
+                            .itemModel(p -> generated(p, entry.getKey(), entry.getValue().textures().get(0))));
+        });
+        BlockWithItem.getRubbleBlocks().forEach(entry -> {
+            dataGen.add(Dob.blockBuilder(entry.getKey().getBlock())
+                    .itemModel(p -> parented(p, entry.getKey().getBlock())));
+        });
     }
 
-    @Override
-    protected void registerModels() {
-        BlockWithItem.getSimpleBlocks().forEach(entry -> parented(entry.getKey()));
-        BlockWithItem.getVariantBlocks().forEach(entry -> parented(entry.getKey()));
-        BlockWithItem.getGlassBlocks().forEach(entry -> parented(entry.getKey()));
-        BlockWithItem.getPaneBlocks().forEach(entry -> generated(entry.getKey(), entry.getValue().textures().get(0)));
-        BlockWithItem.getRubbleBlocks().forEach(entry -> parented(entry.getKey()));
+    private static void parented(BaseItemModelProvider p, BlockWithItem<? extends Block> bwi) {
+        parented(p, bwi.getBlock());
     }
 
-    private void parented(BlockWithItem<? extends Block> bwi) {
-        parented(bwi.getBlock());
+    private static void parented(BaseItemModelProvider p, RegistryObject<? extends Block> block) {
+        p.getBuilder(block.getId().getPath())
+                .parent(new ModelFile.UncheckedModelFile(p.modLoc("block/" + block.getId().getPath())));
     }
 
-    private void parented(RegistryObject<? extends Block> block) {
-        getBuilder(block.getId().getPath())
-                .parent(new ModelFile.UncheckedModelFile(modLoc("block/" + block.getId().getPath())));
-    }
-
-    private void generated(BlockWithItem<? extends Block> bwi, String texture) {
-        getBuilder(bwi.getBlock().getId().getPath()).parent(getExistingFile(mcLoc("item/generated")))
+    private static void generated(BaseItemModelProvider p, BlockWithItem<? extends Block> bwi, String texture) {
+        p.getBuilder(bwi.getBlock().getId().getPath()).parent(p.getExistingFile(p.mcLoc("item/generated")))
                 .texture("layer0", new ResourceLocation(texture));
-    }
-
-
-    @Override
-    public String getName() {
-        return "LostRuins Item Models";
     }
 }

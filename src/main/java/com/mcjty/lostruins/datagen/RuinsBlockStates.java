@@ -1,16 +1,16 @@
 package com.mcjty.lostruins.datagen;
 
-import com.mcjty.lostruins.LostRuins;
 import com.mcjty.lostruins.blocks.RubbleBlock;
 import com.mcjty.lostruins.setup.BlockWithItem;
+import mcjty.lib.datagen.BaseBlockStateProvider;
+import mcjty.lib.datagen.DataGen;
+import mcjty.lib.datagen.Dob;
 import net.minecraft.core.Direction;
-import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.IronBarsBlock;
 import net.minecraft.world.level.block.PipeBlock;
 import net.minecraftforge.client.model.generators.*;
-import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
@@ -18,24 +18,34 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-public class RuinsBlockStates extends BlockStateProvider {
+public class RuinsBlockStates {
 
-    public RuinsBlockStates(DataGenerator gen, ExistingFileHelper exFileHelper) {
-        super(gen, LostRuins.MODID, exFileHelper);
+    public static void generate(DataGen dataGen) {
+        BlockWithItem.getSimpleBlocks().forEach(entry -> {
+            dataGen.add(Dob.blockBuilder(entry.getKey().getBlock())
+                    .blockState(p -> simple(p, entry.getKey(), entry.getValue().texture())));
+        });
+        BlockWithItem.getVariantBlocks().forEach(entry -> {
+            dataGen.add(Dob.blockBuilder(entry.getKey().getBlock())
+                    .blockState(p -> variant(p, entry.getKey(), entry.getValue().textures())));
+        });
+        BlockWithItem.getGlassBlocks().forEach(entry -> {
+            dataGen.add(Dob.blockBuilder(entry.getKey().getBlock())
+                    .blockState(p -> variant(p, entry.getKey(), entry.getValue().textures())));
+        });
+        BlockWithItem.getPaneBlocks().forEach(entry -> {
+            dataGen.add(Dob.blockBuilder(entry.getKey().getBlock())
+                    .blockState(p -> pane(p, entry.getKey().getBlock().get(), entry.getValue().textures())));
+        });
+        BlockWithItem.getRubbleBlocks().forEach(entry -> {
+            dataGen.add(Dob.blockBuilder(entry.getKey().getBlock())
+                    .blockState(p -> rubble(p, entry.getKey().getBlock(), entry.getValue().texture())));
+        });
     }
 
-    @Override
-    protected void registerStatesAndModels() {
-        BlockWithItem.getSimpleBlocks().forEach(entry -> simple(entry.getKey(), entry.getValue().texture()));
-        BlockWithItem.getVariantBlocks().forEach(entry -> variant(entry.getKey(), entry.getValue().textures()));
-        BlockWithItem.getGlassBlocks().forEach(entry -> variant(entry.getKey(), entry.getValue().textures()));
-        BlockWithItem.getPaneBlocks().forEach(entry -> pane(entry.getKey().getBlock().get(), entry.getValue().textures()));
-        BlockWithItem.getRubbleBlocks().forEach(entry -> rubble(entry.getKey().getBlock(), entry.getValue().texture()));
-    }
-
-    public void pane(IronBarsBlock block, List<String> textures) {
+    private static void pane(BaseBlockStateProvider p, IronBarsBlock block, List<String> textures) {
         String baseName = ForgeRegistries.BLOCKS.getKey(block).toString();
-        MultiPartBlockStateBuilder builder = getMultipartBuilder(block);
+        MultiPartBlockStateBuilder builder = p.getMultipartBuilder(block);
         List<ModelFile> post = new ArrayList<>();
         List<ModelFile> side = new ArrayList<>();
         List<ModelFile> sideAlt = new ArrayList<>();
@@ -44,11 +54,11 @@ public class RuinsBlockStates extends BlockStateProvider {
         for (String texture : textures) {
             String suffix = texture.substring(texture.lastIndexOf('/') + 1);
             ResourceLocation txt = new ResourceLocation(texture);
-            post.add(models().panePost(baseName + "_post_" + suffix, txt, txt));
-            side.add(models().paneSide(baseName + "_side_" + suffix, txt, txt));
-            sideAlt.add(models().paneSideAlt(baseName + "_side_alt_" + suffix, txt, txt));
-            noSide.add(models().paneNoSide(baseName + "_noside_" + suffix, txt));
-            noSideAlt.add(models().paneNoSideAlt(baseName + "_noside_alt_" + suffix, txt));
+            post.add(p.models().panePost(baseName + "_post_" + suffix, txt, txt));
+            side.add(p.models().paneSide(baseName + "_side_" + suffix, txt, txt));
+            sideAlt.add(p.models().paneSideAlt(baseName + "_side_alt_" + suffix, txt, txt));
+            noSide.add(p.models().paneNoSide(baseName + "_noside_" + suffix, txt));
+            noSideAlt.add(p.models().paneNoSideAlt(baseName + "_noside_alt_" + suffix, txt));
         }
 
         ConfiguredModel.Builder<MultiPartBlockStateBuilder.PartBuilder> part = builder.part();
@@ -93,24 +103,24 @@ public class RuinsBlockStates extends BlockStateProvider {
         });
     }
 
-    private void simple(BlockWithItem<?> bwi) {
-        simple(bwi.getBlock());
+    private static void simple(BaseBlockStateProvider p, BlockWithItem<?> bwi) {
+        simple(p, bwi.getBlock());
     }
 
-    private <T extends Block> void simple(BlockWithItem<T> bwi, String texture) {
+    private static <T extends Block> void simple(BaseBlockStateProvider p, BlockWithItem<T> bwi, String texture) {
         T block = bwi.getBlock().get();
         ResourceLocation txt = new ResourceLocation(texture);
-        simpleBlock(block, models().cubeAll(ForgeRegistries.BLOCKS.getKey(block).getPath(), txt));
+        p.simpleBlock(block, p.models().cubeAll(ForgeRegistries.BLOCKS.getKey(block).getPath(), txt));
     }
 
-    private <T extends Block> void variant(BlockWithItem<T> bwi, List<String> textures) {
+    private static <T extends Block> void variant(BaseBlockStateProvider p, BlockWithItem<T> bwi, List<String> textures) {
         T block = bwi.getBlock().get();
-        VariantBlockStateBuilder bld = getVariantBuilder(block);
+        VariantBlockStateBuilder bld = p.getVariantBuilder(block);
 
         int idx = 0;
         for (String texture : textures) {
             ResourceLocation txt = new ResourceLocation(texture);
-            BlockModelBuilder model = models().cubeAll(ForgeRegistries.BLOCKS.getKey(block).getPath() + (idx == 0 ? "" : idx), txt);
+            BlockModelBuilder model = p.models().cubeAll(ForgeRegistries.BLOCKS.getKey(block).getPath() + (idx == 0 ? "" : idx), txt);
             idx++;
 
             bld.partialState().addModels(
@@ -119,33 +129,33 @@ public class RuinsBlockStates extends BlockStateProvider {
         }
     }
 
-    private <T extends Block> void simple(RegistryObject<T> block) {
-        simpleBlock(block.get(), cubeAll(block.get()));
+    private static <T extends Block> void simple(BaseBlockStateProvider p, RegistryObject<T> block) {
+        p.simpleBlock(block.get(), p.cubeAll(block.get()));
     }
 
-    private void rubble(RegistryObject<RubbleBlock> block, String texture) {
+    private static void rubble(BaseBlockStateProvider p, RegistryObject<RubbleBlock> block, String texture) {
         ResourceLocation txt = new ResourceLocation(texture);
-        rubble(block, txt);
+        rubble(p, block, txt);
     }
 
-    private void rubble(RegistryObject<RubbleBlock> block, ResourceLocation txt) {
-        BlockModelBuilder frame1 = models().getBuilder("block/" + block.getId().getPath());
-        frame1.parent(models().getExistingFile(mcLoc("cube")));
+    private static void rubble(BaseBlockStateProvider p, RegistryObject<RubbleBlock> block, ResourceLocation txt) {
+        BlockModelBuilder frame1 = p.models().getBuilder("block/" + block.getId().getPath());
+        frame1.parent(p.models().getExistingFile(p.mcLoc("cube")));
         cube(frame1, 1f, 0f, 1f, 5f, 5f, 6f);
         cube(frame1, 6f, 0f, 2f, 11f, 3f, 4f);
         cube(frame1, 4f, 0f, 5f, 8f, 4f, 11f);
         frame1.texture("txt", txt);
         frame1.texture("particle", txt);
 
-        BlockModelBuilder frame2 = models().getBuilder("block/" + block.getId().getPath()+"1");
-        frame2.parent(models().getExistingFile(mcLoc("cube")));
+        BlockModelBuilder frame2 = p.models().getBuilder("block/" + block.getId().getPath()+"1");
+        frame2.parent(p.models().getExistingFile(p.mcLoc("cube")));
         cube(frame2, 7f, 0f, 2f, 13f, 6f, 7f);
         cube(frame2, 1f, 0f, 11f, 3f, 3f, 13f);
         cube(frame2, 4f, 0f, 6f, 9f, 5f, 9f);
         frame2.texture("txt", txt);
         frame2.texture("particle", txt);
 
-        VariantBlockStateBuilder bld = getVariantBuilder(block.get());
+        VariantBlockStateBuilder bld = p.getVariantBuilder(block.get());
         bld.partialState().addModels(
                 new ConfiguredModel(frame1),
                 new ConfiguredModel(frame1, 0, 90, false),
@@ -158,7 +168,7 @@ public class RuinsBlockStates extends BlockStateProvider {
         );
     }
 
-    private void cube(BlockModelBuilder builder, float fx, float fy, float fz, float tx, float ty, float tz) {
+    private static void cube(BlockModelBuilder builder, float fx, float fy, float fz, float tx, float ty, float tz) {
         builder.element()
                 .from(fx, fy, fz)
                 .to(tx, ty, tz)

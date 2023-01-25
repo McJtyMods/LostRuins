@@ -1,19 +1,11 @@
 package com.mcjty.lostruins.datagen;
 
-import net.minecraft.data.DataGenerator;
-import net.minecraft.data.recipes.FinishedRecipe;
-import net.minecraft.data.recipes.RecipeProvider;
+import mcjty.lib.datagen.DataGen;
 
-import java.util.function.Consumer;
+public class RuinsRecipes {
 
-public class RuinsRecipes extends RecipeProvider {
+    public static void generate(DataGen dataGen) {
 
-    public RuinsRecipes(DataGenerator generatorIn) {
-        super(generatorIn);
-    }
-
-    @Override
-    protected void buildCraftingRecipes(Consumer<FinishedRecipe> consumer) {
     }
 
 }
