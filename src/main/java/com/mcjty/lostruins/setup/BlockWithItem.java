@@ -6,8 +6,8 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.IronBarsBlock;
+import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraft.world.level.material.Material;
 import net.minecraftforge.registries.RegistryObject;
 
 import java.util.HashMap;
@@ -82,7 +82,7 @@ public class BlockWithItem<T extends Block> {
     }
 
     public static BlockWithItem<Block> create(String name) {
-        return create(name, () -> new Block(BlockBehaviour.Properties.of(Material.STONE)));
+        return create(name, () -> new Block(BlockBehaviour.Properties.of().sound(SoundType.STONE)));
     }
 
     public static Stream<Map.Entry<BlockWithItem<?>, BlockInfoMulti>> getGlassBlocks() {
