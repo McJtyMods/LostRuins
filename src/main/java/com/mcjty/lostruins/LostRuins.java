@@ -13,6 +13,7 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.DistExecutor;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.minecraftforge.fml.loading.FMLEnvironment;
 
 import java.util.function.Supplier;
 
@@ -27,16 +28,18 @@ public class LostRuins {
     public static LostRuins instance;
 
     public LostRuins() {
+        IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
+        Dist dist = FMLEnvironment.dist;
+
         instance = this;
         Registration.register();
         LostCitiesCompat.setupLostCitiesPre();
-        IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
         bus.addListener(setup::init);
         bus.addListener(this::onDataGen);
 
-        DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> () -> {
+        if (dist.isClient()) {
             bus.addListener(ClientSetup::initClient);
-        });
+        }
     }
 
     public static <T extends Item> Supplier<T> tab(Supplier<T> supplier) {

@@ -4,6 +4,7 @@ import com.mcjty.lostruins.setup.BlockWithItem;
 import mcjty.lib.datagen.BaseItemModelProvider;
 import mcjty.lib.datagen.DataGen;
 import mcjty.lib.datagen.Dob;
+import mcjty.lib.setup.DeferredBlock;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.client.model.generators.ModelFile;
@@ -38,7 +39,7 @@ public class RuinsItems {
         parented(p, bwi.getBlock());
     }
 
-    private static void parented(BaseItemModelProvider p, RegistryObject<? extends Block> block) {
+    private static void parented(BaseItemModelProvider p, DeferredBlock<? extends Block> block) {
         p.getBuilder(block.getId().getPath())
                 .parent(new ModelFile.UncheckedModelFile(p.modLoc("block/" + block.getId().getPath())));
     }

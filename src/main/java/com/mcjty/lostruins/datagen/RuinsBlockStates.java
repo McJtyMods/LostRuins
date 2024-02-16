@@ -5,6 +5,7 @@ import com.mcjty.lostruins.setup.BlockWithItem;
 import mcjty.lib.datagen.BaseBlockStateProvider;
 import mcjty.lib.datagen.DataGen;
 import mcjty.lib.datagen.Dob;
+import mcjty.lib.setup.DeferredBlock;
 import net.minecraft.core.Direction;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
@@ -129,16 +130,16 @@ public class RuinsBlockStates {
         }
     }
 
-    private static <T extends Block> void simple(BaseBlockStateProvider p, RegistryObject<T> block) {
+    private static <T extends Block> void simple(BaseBlockStateProvider p, DeferredBlock<T> block) {
         p.simpleBlock(block.get(), p.cubeAll(block.get()));
     }
 
-    private static void rubble(BaseBlockStateProvider p, RegistryObject<RubbleBlock> block, String texture) {
+    private static void rubble(BaseBlockStateProvider p, DeferredBlock<RubbleBlock> block, String texture) {
         ResourceLocation txt = new ResourceLocation(texture);
         rubble(p, block, txt);
     }
 
-    private static void rubble(BaseBlockStateProvider p, RegistryObject<RubbleBlock> block, ResourceLocation txt) {
+    private static void rubble(BaseBlockStateProvider p, DeferredBlock<RubbleBlock> block, ResourceLocation txt) {
         BlockModelBuilder frame1 = p.models().getBuilder("block/" + block.getId().getPath());
         frame1.parent(p.models().getExistingFile(p.mcLoc("cube")));
         cube(frame1, 1f, 0f, 1f, 5f, 5f, 6f);

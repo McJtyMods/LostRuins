@@ -2,6 +2,8 @@ package com.mcjty.lostruins.setup;
 
 import com.mcjty.lostruins.blocks.RubbleBlock;
 import com.mcjty.lostruins.blocks.VariantGlassBlock;
+import mcjty.lib.setup.DeferredBlock;
+import mcjty.lib.setup.DeferredItem;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
@@ -19,7 +21,7 @@ import java.util.stream.Stream;
 import static com.mcjty.lostruins.setup.Registration.createStandardProperties;
 
 public class BlockWithItem<T extends Block> {
-    private final RegistryObject<T> block;
+    private final DeferredBlock<T> block;
 
     public static record BlockInfo(String translation, String texture) {}
     public static record BlockInfoMulti(String translation, List<String> textures) {}
@@ -32,10 +34,10 @@ public class BlockWithItem<T extends Block> {
 
     private BlockWithItem(String name, Supplier<T> supplier) {
         block = Registration.BLOCKS.register(name, supplier);
-        RegistryObject<Item> item = Registration.ITEMS.register(block.getId().getPath(), () -> new BlockItem(block.get(), createStandardProperties()));
+        DeferredItem<Item> item = Registration.ITEMS.register(block.getId().getPath(), () -> new BlockItem(block.get(), createStandardProperties()));
     }
 
-    public RegistryObject<T> getBlock() {
+    public DeferredBlock<T> getBlock() {
         return block;
     }
 
