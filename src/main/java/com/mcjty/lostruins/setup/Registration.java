@@ -2,7 +2,6 @@ package com.mcjty.lostruins.setup;
 
 import com.google.common.collect.Lists;
 import com.mcjty.lostruins.LostRuins;
-import mcjty.lib.setup.DeferredBlock;
 import mcjty.lib.setup.DeferredBlocks;
 import mcjty.lib.setup.DeferredItems;
 import net.minecraft.core.registries.Registries;
@@ -12,13 +11,11 @@ import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -97,8 +94,7 @@ public class Registration {
         }
     }
 
-    public static void register() {
-        IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
+    public static void register(IEventBus bus) {
         BLOCKS.register(bus);
         ITEMS.register(bus);
         TILES.register(bus);
