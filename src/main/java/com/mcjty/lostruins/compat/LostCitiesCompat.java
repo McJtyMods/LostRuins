@@ -3,7 +3,7 @@ package com.mcjty.lostruins.compat;
 import mcjty.lostcities.api.ILostCities;
 import mcjty.lostcities.api.ILostCitiesPre;
 import mcjty.lostcities.api.ILostCityProfile;
-import net.minecraftforge.fml.InterModComms;
+import net.neoforged.neoforge.fml.InterModComms;
 
 import javax.annotation.Nullable;
 import java.util.function.Function;

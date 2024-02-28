@@ -2,7 +2,7 @@ package com.mcjty.lostruins.setup;
 
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
-import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
+import net.neoforged.neoforge.fml.event.lifecycle.FMLClientSetupEvent;
 
 public class ClientSetup {
 

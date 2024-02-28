@@ -7,8 +7,8 @@ import mcjty.lib.datagen.Dob;
 import mcjty.lib.setup.DeferredBlock;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
-import net.minecraftforge.client.model.generators.ModelFile;
-import net.minecraftforge.registries.RegistryObject;
+import net.neoforged.neoforge.client.model.generators.ModelFile;
+import net.neoforged.neoforge.registries.RegistryObject;
 
 public class RuinsItems {
 
