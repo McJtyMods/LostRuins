@@ -2,8 +2,6 @@ package com.mcjty.lostruins.setup;
 
 import com.mcjty.lostruins.blocks.RubbleBlock;
 import com.mcjty.lostruins.blocks.VariantGlassBlock;
-import mcjty.lib.setup.DeferredBlock;
-import mcjty.lib.setup.DeferredItem;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;

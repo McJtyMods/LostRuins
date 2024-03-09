@@ -5,7 +5,6 @@ import com.mcjty.lostruins.setup.BlockWithItem;
 import mcjty.lib.datagen.BaseBlockStateProvider;
 import mcjty.lib.datagen.DataGen;
 import mcjty.lib.datagen.Dob;
-import mcjty.lib.setup.DeferredBlock;
 import net.minecraft.core.Direction;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
